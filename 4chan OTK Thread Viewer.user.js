@@ -170,7 +170,7 @@
     // ---> END OF MOVED BLOCK <---
 
     // Storage keys (must match tracker script)
-    // const THREADS_KEY = 'otkActiveThreads'; // Already defined globally, ensure only one definition
+    const THREADS_KEY = 'otkActiveThreads'; // Already defined globally, ensure only one definition
     const MESSAGES_KEY = 'otkMessagesByThreadId';
     const COLORS_KEY = 'otkThreadColors';
     const SELECTED_MESSAGE_KEY = 'otkSelectedMessageId';
@@ -207,17 +207,46 @@
     function handleIntersection(entries, observer) {
         entries.forEach(entry => {
             const placeholder = entry.target;
-            const isLoaded = placeholder.dataset.loaded === 'true';
-            const embedType = placeholder.dataset.embedType; // Moved up to be accessible for Twitter logic
+            const embedType = placeholder.dataset.embedType;
+            const isCurrentlyIntersecting = entry.isIntersecting;
+            const currentLoadedState = placeholder.dataset.loaded;
 
-            if (entry.isIntersecting) {
+            console.log(`[handleIntersection Entry] type: ${embedType}, id: ${placeholder.dataset.videoId || placeholder.dataset.tweetId}, intersecting: ${isCurrentlyIntersecting}, loaded: ${currentLoadedState}`);
+
+            if (embedType === 'custom-twitter') {
+                console.log(`[handleIntersection CustomTweet] id: ${placeholder.dataset.tweetId}, intersecting: ${isCurrentlyIntersecting}, loaded: ${currentLoadedState}`);
+                if (isCurrentlyIntersecting) {
+                    console.log(`[handleIntersection CustomTweet] Is Intersecting. Checking loaded state... current: "${currentLoadedState}"`);
+                    // If it's not yet explicitly 'true', then it's 'false', undefined, or something else; attempt to load.
+                    if (currentLoadedState !== 'true') { 
+                        const tweetId = placeholder.dataset.tweetId;
+                        const originalUrl = placeholder.dataset.originalUrl;
+                        console.log(`[CustomTweet IO] Custom tweet ${tweetId} is intersecting. Current loaded state is "${currentLoadedState}". Attempting to load. URL: ${originalUrl}`);
+                        fetchAndRenderCustomTweet(tweetId, originalUrl, placeholder)
+                            .catch(err => { 
+                                console.error(`[CustomTweet IO] fetchAndRenderCustomTweet promise rejected for ${tweetId}:`, err);
+                                // Ensure it's marked as 'true' even if the promise from fetchAndRenderCustomTweet rejects,
+                                // as fetchAndRenderCustomTweet itself also sets loaded to true internally on error.
+                                placeholder.dataset.loaded = 'true'; 
+                            });
+                    } else {
+                        console.log(`[handleIntersection CustomTweet] Already marked as loaded ('true'). Current loaded state: "${currentLoadedState}"`);
+                    }
+                } else {
+                    // Out of view for custom-twitter - currently does nothing.
+                    console.log(`[handleIntersection CustomTweet] Not intersecting: ${placeholder.dataset.tweetId}`);
+                }
+                return; // Handled custom-twitter type
+            }
+
+            // Logic for other embed types (non-custom-twitter)
+            const isLoaded = currentLoadedState === 'true'; // Re-evaluate for other types
+
+            if (isCurrentlyIntersecting) {
                 if (!isLoaded) {
-                    // Load iframe or direct video
-                    // const embedType = placeholder.dataset.embedType; // Moved up
-                    const videoId = placeholder.dataset.videoId;
-                    const startTime = placeholder.dataset.startTime; // Will be undefined if not set
-
-                    console.log(`[OTK Viewer IO] Loading embed for: ${embedType} - ${videoId}`);
+                    const videoId = placeholder.dataset.videoId; // Ensure this is defined for non-twitter types
+                    const startTime = placeholder.dataset.startTime; 
+                    // console.log(`[OTK Viewer IO] Loading embed for: ${embedType} - ${videoId}`); // Covered by entry log
 
                     if (embedType === 'streamable') {
                         const guessedMp4Url = `https://cf-files.streamable.com/temp/${videoId}.mp4`;
@@ -839,7 +868,8 @@ async function manageInitialScroll() {
         // 1. X/Twitter - Convert to custom tweet placeholder HTML
         // This regex will find all Twitter status URLs not already in an attribute.
         text = text.replace(twitterRegexG, (match, originalUrl, tweetId) => {
-            console.log(`[OTK ConvertQuotes] Found Twitter URL: ${originalUrl}, Tweet ID: ${tweetId}. Creating custom placeholder.`);
+            console.log(`[OTK ConvertQuotes] Found Twitter URL (match): "${match}", originalUrl (group1): "${originalUrl}", Tweet ID: ${tweetId}.`); // Enhanced log
+            console.log(`[OTK ConvertQuotes] Calling createCustomTweetPlaceholderHTML with tweetId: "${tweetId}", originalUrl: "${originalUrl}"`); // Log before call
             if (embedCounts && embedCounts.hasOwnProperty('twitter')) embedCounts.twitter++; // Count custom tweets
             return createCustomTweetPlaceholderHTML(tweetId, originalUrl);
         });
@@ -1192,15 +1222,39 @@ async function manageInitialScroll() {
         document.head.appendChild(styleSheet);
     }
 
-function createCustomTweetPlaceholderHTML(tweetId, originalUrl) {
-    const escapedOriginalUrl = originalUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+function createCustomTweetPlaceholderHTML(tweetId, originalUrlInput) {
+    console.log(`[createCustomTweetPlaceholderHTML] Input - tweetId: "${tweetId}", originalUrlInput: "${originalUrlInput}"`);
+
+    let cleanUrl = originalUrlInput;
+    // Attempt to extract URL if originalUrlInput is an anchor tag string
+    if (typeof originalUrlInput === 'string' && originalUrlInput.trim().startsWith('<a')) {
+        console.log(`[createCustomTweetPlaceholderHTML] originalUrlInput is a string starting with <a. Attempting extraction.`);
+        const anchorMatch = originalUrlInput.match(/href\s*=\s*["']([^"']+)["']/);
+        if (anchorMatch && anchorMatch[1]) {
+            let extracted = anchorMatch[1];
+            // Decode HTML entities from the extracted href value
+            const tempElem = document.createElement('textarea');
+            tempElem.innerHTML = extracted;
+            cleanUrl = tempElem.value;
+            console.warn(`[createCustomTweetPlaceholderHTML] Extracted and decoded clean URL: "${cleanUrl}" from HTML string: "${originalUrlInput}"`);
+        } else {
+            console.warn(`[createCustomTweetPlaceholderHTML] originalUrlInput looked like an anchor tag but could not extract href: "${originalUrlInput}"`);
+            // Fallback to using originalUrlInput (now cleanUrl), which will likely fail later but better than erroring here
+        }
+    } else {
+        console.log(`[createCustomTweetPlaceholderHTML] originalUrlInput is not an anchor string or not a string. Using as is (after String() conversion for escapedCleanUrl). Type: ${typeof originalUrlInput}`);
+    }
+    console.log(`[createCustomTweetPlaceholderHTML] After cleaning attempt - cleanUrl: "${cleanUrl}"`);
+
+    const escapedCleanUrl = String(cleanUrl).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    console.log(`[createCustomTweetPlaceholderHTML] Escaped clean URL - escapedCleanUrl: "${escapedCleanUrl}"`);
     // The main container gets the class for fixed sizing and general appearance.
     // It also gets 'embed-placeholder' for the IntersectionObserver and 'custom-twitter' for type.
     return `
         <div class="custom-tweet-placeholder embed-placeholder" 
              data-embed-type="custom-twitter" 
              data-tweet-id="${tweetId}" 
-             data-original-url="${escapedOriginalUrl}" 
+             data-original-url="${escapedCleanUrl}" 
              data-loaded="false">
             <div class="custom-tweet-header">
                 <img class="custom-tweet-avatar" src="" alt="Avatar" style="display:none; background-color: #eee;">
@@ -1217,7 +1271,7 @@ function createCustomTweetPlaceholderHTML(tweetId, originalUrl) {
                 </div>
             </div>
             <div class="custom-tweet-footer">
-                <a href="${escapedOriginalUrl}" target="_blank" rel="noopener noreferrer">View on X/Twitter</a>
+                <a href="${escapedCleanUrl}" target="_blank" rel="noopener noreferrer">View on X/Twitter</a>
                 <span class="custom-tweet-date"></span>
             </div>
         </div>
@@ -1225,7 +1279,9 @@ function createCustomTweetPlaceholderHTML(tweetId, originalUrl) {
 }
 
 async function fetchAndRenderCustomTweet(tweetId, originalUrl, targetElement) {
-    console.log(`[CustomTweet] Fetching data for ${tweetId}`);
+    console.log(`[fetchAndRenderCustomTweet] Called for tweetId: "${tweetId}", originalUrl from dataset: "${originalUrl}"`);
+    console.log(`[fetchAndRenderCustomTweet] Target element:`, targetElement);
+
     const loadingDiv = targetElement.querySelector('.custom-tweet-loading');
     const contentDiv = targetElement.querySelector('.custom-tweet-content'); // Main content area, not just media
     const mediaDiv = targetElement.querySelector('.custom-tweet-media');
@@ -1261,26 +1317,33 @@ async function fetchAndRenderCustomTweet(tweetId, originalUrl, targetElement) {
     };
 
     try {
+        console.log(`[fetchAndRenderCustomTweet] Attempting to parse originalUrl: "${originalUrl}"`);
         // Extract user and status ID from originalUrl for vxtwitter
-        const urlParts = originalUrl.match(/twitter\.com\/(.+)\/status\/(\d+)/);
+        // Regex updated to be more flexible with x.com or twitter.com and potential leading garbage if cleaning failed.
+        const urlParts = originalUrl ? String(originalUrl).match(/(?:x|twitter)\.com\/(.+)\/status\/(\d+)/) : null;
+        console.log(`[fetchAndRenderCustomTweet] urlParts from match:`, urlParts);
+
         if (!urlParts || urlParts.length < 3) {
-            throw new Error("Invalid tweet URL for API construction.");
+            console.error(`[fetchAndRenderCustomTweet] Failed to parse URL or urlParts too short. originalUrl: "${originalUrl}", urlParts:`, urlParts);
+            throw new Error(`Invalid tweet URL for API construction. URL was: "${originalUrl}"`);
         }
         const apiUrlUser = urlParts[1];
         const apiUrlTweetId = urlParts[2];
         const apiUrl = `https://api.vxtwitter.com/${apiUrlUser}/status/${apiUrlTweetId}`;
 
-        console.log(`[CustomTweet] API URL: ${apiUrl}`);
+        console.log(`[fetchAndRenderCustomTweet] Constructed API URL: ${apiUrl}`);
         const response = await fetch(apiUrl);
+        console.log(`[fetchAndRenderCustomTweet] API response status: ${response.status}`);
 
         if (!response.ok) {
             throw new Error(`API request failed: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
-        console.log(`[CustomTweet] Data for ${tweetId}:`, data);
+        console.log(`[fetchAndRenderCustomTweet] API response data for ${tweetId}:`, data);
 
         if (!data || !data.user_name || !data.text) { // Basic check for essential data
+            console.error(`[fetchAndRenderCustomTweet] Tweet data incomplete or not found from API for ${tweetId}. Data:`, data);
             throw new Error("Tweet data incomplete or not found from API.");
         }
 
@@ -1343,9 +1406,10 @@ async function fetchAndRenderCustomTweet(tweetId, originalUrl, targetElement) {
         }
 
         targetElement.dataset.loaded = 'true';
+        console.log(`[fetchAndRenderCustomTweet] Successfully rendered tweet ${tweetId}. Marked as loaded.`);
 
     } catch (error) {
-        console.error(`[CustomTweet] Error fetching/rendering tweet ${tweetId}:`, error);
+        console.error(`[fetchAndRenderCustomTweet] Error for tweetId ${tweetId}. Original URL: "${originalUrl}". Error:`, error.message, error.stack);
         showError(`Failed to load tweet: ${error.message}`);
     }
 }

@@ -1,0 +1,684 @@
+Failed to load tweet: Invalid tweet URL for API construction. URL was: "<a href="
+
+GET
+https://boards.4chan.org/b/
+[HTTP/2 200  31ms]
+
+Expected declaration but found '/'.  Skipped to next declaration. b:1:5
+GET
+https://s.4cdn.org/css/yotsubanew.715.css
+[HTTP/3 200  34ms]
+
+GET
+https://s.4cdn.org/css/xa24extra.css
+[HTTP/3 200  29ms]
+
+GET
+https://s.4cdn.org/css/yotsubamobile.715.css
+[HTTP/3 200  29ms]
+
+GET
+https://static.danbo.org/publisher/q2g345hq2g534-4chan/js/preload.4chan.js
+[HTTP/3 200  32ms]
+
+GET
+https://s.4cdn.org/js/core.min.1124.js
+[HTTP/3 200  37ms]
+
+GET
+https://s.4cdn.org/js/extension.min.1179.js
+[HTTP/3 200  38ms]
+
+GET
+https://s.4cdn.org/image/contest_banners/6ef9a91fe40491cbf4ae3be1d9721b3b0fe41c9e.gif
+[HTTP/3 200  40ms]
+
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. yotsubamobile.715.css:6:26
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. yotsubamobile.715.css:7:29
+Error in parsing value for 'max-width'.  Declaration dropped. yotsubamobile.715.css:864:14
+Error in parsing value for 'max-height'.  Declaration dropped. yotsubamobile.715.css:865:15
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. yotsubanew.715.css:3:25
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. yotsubanew.715.css:4:28
+Unrecognised at-rule or error parsing at-rule '@-o-keyframes'. yotsubanew.715.css:1651:14
+GET
+https://s.4cdn.org/css/burichannew.715.css
+[HTTP/3 200  17ms]
+
+Feature Policy: Skipping unsupported feature name “autoplay”. preload.4chan.js:88:5
+Feature Policy: Skipping unsupported feature name “autoplay”. preload.4chan.js:91:10
+Feature Policy: Skipping unsupported feature name “autoplay”. preload.4chan.js:96:12
+Empty string passed to getElementById(). preload.4chan.js:98:19
+Feature Policy: Skipping unsupported feature name “autoplay”. preload.4chan.js:88:5
+Feature Policy: Skipping unsupported feature name “autoplay”. preload.4chan.js:91:10
+Feature Policy: Skipping unsupported feature name “autoplay”. preload.4chan.js:96:12
+Empty string passed to getElementById(). preload.4chan.js:98:19
+GET
+https://s.4cdn.org/css/yotsubluenew.715.css
+[HTTP/3 200  19ms]
+
+GET
+https://s.4cdn.org/css/photon.715.css
+[HTTP/3 200  19ms]
+
+GET
+https://s.4cdn.org/css/tomorrow.715.css
+[HTTP/3 200  19ms]
+
+GET
+https://s.4cdn.org/image/fade.png
+[HTTP/3 200  19ms]
+
+GET
+https://s.4cdn.org/css/futabanew.715.css
+[HTTP/3 200  19ms]
+
+[OTK Tracker] Background refresh scheduled every 150000 seconds. 4chan OTK Thread Tracker.user.js:388:13
+[OTK Viewer EXECUTION] Script starting to execute. 4chan OTK Thread Viewer.user.js:12:13
+[OTK Viewer Metrics] Loaded messagesByThreadId: 4chan OTK Thread Viewer.user.js:1000:17
+    - Thread count: 0 4chan OTK Thread Viewer.user.js:1001:17
+    - Total messages stored: 0 4chan OTK Thread Viewer.user.js:1002:17
+    - Estimated size (JSON string length): 2 characters 4chan OTK Thread Viewer.user.js:1003:17
+[OTK Viewer] Init: viewerWasVisible from localStorage: null 4chan OTK Thread Viewer.user.js:2308:13
+[OTK Viewer] Init: initialSelectedId from localStorage: null 4chan OTK Thread Viewer.user.js:2310:13
+GET
+https://www.google-analytics.com/analytics.js
+[HTTP/2 200  22ms]
+
+GET
+https://s.4cdn.org/image/title/152.png
+[HTTP/3 200  17ms]
+
+GET
+https://i.4cdn.org/b/1751515040753108s.jpg
+[HTTP/3 200  21ms]
+
+GET
+https://hakurei.us-cdnbo.org/gate?d=27&p=b&z=1&x=__NSFW__&fqdn=boards.4chan.org&zmd=14&xff=x5k4i3
+[HTTP/2 200  269ms]
+
+GET
+https://s.4cdn.org/image/buttons/futaba/post_expand_plus.png
+[HTTP/3 200  17ms]
+
+GET
+https://s.4cdn.org/image/buttons/futaba/post_expand_minus.png
+[HTTP/3 200  17ms]
+
+GET
+https://i.4cdn.org/b/1751516962370418s.jpg
+[HTTP/3 200  19ms]
+
+GET
+https://i.4cdn.org/b/1751511700895574s.jpg
+[HTTP/3 200  19ms]
+
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. burichannew.715.css:3:25
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. burichannew.715.css:4:28
+Unrecognised at-rule or error parsing at-rule '@-o-keyframes'. burichannew.715.css:1602:14
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. tomorrow.715.css:2:25
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. tomorrow.715.css:3:28
+Unrecognised at-rule or error parsing at-rule '@-o-keyframes'. tomorrow.715.css:1654:14
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. yotsubluenew.715.css:3:25
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. yotsubluenew.715.css:4:28
+Unrecognised at-rule or error parsing at-rule '@-o-keyframes'. yotsubluenew.715.css:1653:14
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. futabanew.715.css:3:25
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. futabanew.715.css:4:28
+Unrecognised at-rule or error parsing at-rule '@-o-keyframes'. futabanew.715.css:1596:14
+Error in parsing value for '-moz-text-size-adjust'.  Declaration dropped. photon.715.css:2:25
+Error in parsing value for '-webkit-text-size-adjust'.  Declaration dropped. photon.715.css:3:28
+Unrecognised at-rule or error parsing at-rule '@-o-keyframes'. photon.715.css:1626:14
+GET
+https://s.4cdn.org/image/favicon.ico
+[HTTP/3 200  15ms]
+
+Error in parsing value for 'background-position'.  Declaration dropped. s3downbar.css:349:28
+GET
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEaklEQVRYR+1XTWicRRh+v9m/bmKyLSbb0qa1iZTW2lbUNv5AoVaqeBIESS8ePAQPHnIQxBLwIPQqClWLCD0IHnr0oEHTgoSGFtmC1rJu26RmddN0Tdm/ZLP7ffvN+M7MN983M9lepJBLPtjMzDs/z/M+7zs/cWCDP2eD8WGTQKgAuzQ8SQEmGXPSPCyOA4wxwD8ySIzCNFrPJF+fyz3KsIUE6KXhFnOcJKUYFg4qCSAPxMYSGDc7pXaLnci8OXfnUZEICXSmR1AAROM/DsirAjRQIFSCXHEIfMJ85ioSHZ2N0ZAduolRQhPUL/S9NVcWSqu57s8jFL0XkgusoJRkHCQj7bHMficxOIomIkWiFAsfe+RkB3xhY6KNdoyd7JN1xnzqVhYu952cPmUQqE0dYX4ii44RHI/TBTADgsvzejyZZj3bn3VS/XsA/BUcE4CKxRWIqnO2ysZpc3ChrbD7XhMSh78UzocKtG5/yhK9g4EhWEgsEkwWHnBQTy6ugyoSwsaB9PmqrZOiQJ763CRASxdQZoyWYKoYq1IH5AtxIjbQw7zX7HxdlJOvTw5+YRH452vsUUkQAHT1MgA2vAzmCeIil7sopIhLQuTp8xaBv79CBTRPRbweokAIZMdaEemWF2ZSkkPfWASK5wIFtIQKFQlsdmyN5NNCsi48Wh4Fa5DDF0wC3t3PBAEn3E4SVLXDxFLKBBktJVdKKBL69tPViHKLHPk2IjA/Pz+apKVrzFsB2lnDXb8CaacC29IN3IY6gJXdBnigEj9MjK2pzggzLOSZ7yIC+Xz+vOe579XrDXBdV/y8tfsAD36ArY/vEA6u1LCNlcf6s6I027x/SfZngv4qHw+yjTuruvwX9D35LrRhAKrVKoyNjUUEcrnc9Orq6qvlchn4ceh5HmSzWbid/xV27t4nFlouF0U5kMWD6H+05/6chV17DkI8tQ0qlQqMj49HBGZmZi42m6tvDwwMQqFQEApkejxIkQaUi1eFZ7tGXhbApfnZqI3KGG2732rXWz1A41lYXFyEiYmJiMDU1NT77bX6ue07hiAWT0Cz2QS/WYQDmauwJRkLYqpnuXVedN0d9ngKbZoBz8fbwu/A8CktB7hntd/OsIX2cWh4GUEg3inBi7tvQCohLuQo08OLRz//taw3dsf67aeOcHL0R3Mbrt38iOVrL0Gt3S8IJPxFOD58UxLQPdRvt3WnoX0iWneKRo4c+8ki8MeH7PcHx+De/apIwt4tAK/sy0MqzsdZ+7obsGHTx+t3RmQno5ctAjc+YNfLz8O/ty7C/r0ZuFV/Dl47UEAFeIDQE7G/9UtKD4vq08Oi6trlpYWPvPCLSaBx7Z1mrnIyvbxwBfbu7IVibQjeOHRHEgjvCMuzrvlgH0TmAYSvFXBbHTd9YjbFXQvfA0vfH51cqm/9uOXFkr5PIRVrwxODHsTEs4R/8nmK8+VzLbSq3qCU/WK0fNjqs4WQLXwUnR06ff2sQUBgbMC3+Y/JpgIbrsB/CKCnTsr63mQAAAAASUVORK5CYII=
+
+GET
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD10lEQVRYR8WXT0sbQRjGx5ochdiDUD9NCv0CBUGDMWqsMQFtVaIYMRJpa9Wo+WsUFZXozXtBIcxevHkRpF6rUChCEtGmwcQkndmZ2Z3dbJJJEVyIzs7O7vt7n/fZd3dbwAtvLS8cHxgCHB0dwY6ODmulUgEVRFgpy3/lMcBzbB79x/t0Wl5RKBRAqVTKP9zfd52enp4cHx+X6iVZE6C7u1sBIJHlMHSITsOB8dn0GMUAmXQa5HI58Pv2Nv3j8tLhdru/Nw1weHgIe3ps1ru7LCgUi0oQdaBGJqqoIQqFR3mnra0NnJ+f56+vr7tSqVRNJQwVSCaT0GbDAHf/BVAul4HFYpHLcXV1lUY/x+joqKEShgAHB0nY22uzZhFAUUQBTuPC46N8DgbAIBji4uICKfHr/diY50RfjhoABwig15rNUgDlLE5rpjybolfCAGdnZ8So9IdMCR7+5FLjnz6+EwLY39+HdrtdB8BHYpbTmhAz4GB/83nFtCaTCbS3vwaorNLkxPjbJgGypATKpjMfMyDTUXdH4MMMIJ7YkLwTE2IAe3t70N7XhxTIgicNgIqiuJ+7I7U3BO4RCMBMFIhvxCXv5KQYwO7uLnT098slIABq7bmWQGi47KscwgPEopLX620CwIEBkAJPfAl0LYFlTyujB8C9ykwViCGAKVGAHaRAv6yA3gPapsMbyih7PMcAotGoND0lqMDOzg4CGCAAVAE5SXxFKrnciWtkzrdnFSCCAKbESrC1vQ2dAxSg+KTWmUKwwFrTMT3w/a9qQwDaQTgSkWamp8UBBgcGNR5gz57qB5CuEMT8yiYDWNpBKByRfDOiAFtbcNDppABIAV2q2nqrmePI+mNm1IgsWIFwCAHMiCmwubkFh4ac1kwG3wUUgMapDq52HyMw0oiQAqGQNOsTBEhsbiKAIWsWARR1ALpWJKdsrAgxjMlslgHWQuvSnM8npkAigQA+1APQ9FxjAOpEBWAdAcwKAsTjCTjs+sApwOWojc07kBNHXc8AVlfXJP/crJgCsXgcuoZdyIQZUoLq+MaBDeqhAgQRwJw4wDADwH2g4VbbCAwgGAxK835BgGgsBl2uEaJAQ4B6LsRPQ2LC5eCKFPD7xRQIR2PQPVIHgG91DdRRAFYQwLwwQBS6sQLorVhVoH6mtTgYwNLSsrQQmBdTIBQOQ4/bY83UeSFpaAu6gAEsLn2TPgcCTQB4PNZSqSwap+661tZX4OsiAlgQBFgPhWFn5xv0ZUQeAmX5E4yMyZDs47defo7s8nN0DZr7eXMjfREFeJa0BS9i+F0geO6zLPsHRoKCPxS5oCIAAAAASUVORK5CYII=
+
+GET
+data:image/png;base64,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
+
+GET
+data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+
+Content-Security-Policy: Ignoring ‘x-frame-options’ because of ‘frame-ancestors’ directive.
+[OTK Viewer] toggleViewer: Attempting to SHOW viewer. 4chan OTK Thread Viewer.user.js:2233:21
+[OTK Loading] Overlay SHOWN with message: "Loading messages..." (textContent: "Loading messages...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Video Debug - renderAllMessages] ENTER. isManualViewerRefreshInProgress (at start of func): false 4chan OTK Thread Viewer.user.js:1889:17
+[OTK Viewer LIFECYCLE] renderAllMessages: Entered after increased delay. Clearing viewer and message tracking for full re-render. 4chan OTK Thread Viewer.user.js:1891:17
+[OTK Viewer] renderAllMessages: Cleared viewer content and lastKnownMessageIds. 4chan OTK Thread Viewer.user.js:1898:17
+[OTK Loading] Overlay SHOWN with message: "Gathering and sorting messages..." (textContent: "Gathering and sorting messages...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer Metrics] renderAllMessages: Processing 0 total messages for display. 4chan OTK Thread Viewer.user.js:1922:17
+[OTK Video Debug - renderAllMessages] About to render 0 messages. Parent frame context for these messages will be 'initial_render_frame'. 4chan OTK Thread Viewer.user.js:1927:17
+[OTK Viewer LIFECYCLE] renderAllMessages: Successfully FINISHED allMessages.forEach loop (or caught an error). 4chan OTK Thread Viewer.user.js:1959:17
+[OTK Loading] Overlay SHOWN with message: "Rendering content..." (textContent: "Rendering content...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer Metrics] renderAllMessages: Attachment stats from processed messages: 4chan OTK Thread Viewer.user.js:1984:17
+    - Images: 0 4chan OTK Thread Viewer.user.js:1985:17
+    - Videos: 0 4chan OTK Thread Viewer.user.js:1986:17
+    - Other: 0 4chan OTK Thread Viewer.user.js:1987:17
+[OTK Viewer Metrics] renderAllMessages: Embed counts from processed messages: 4chan OTK Thread Viewer.user.js:1988:17
+    - YouTube: 0 4chan OTK Thread Viewer.user.js:1989:17
+    - Twitch: 0 4chan OTK Thread Viewer.user.js:1990:17
+    - Streamable: 0 4chan OTK Thread Viewer.user.js:1991:17
+[OTK Viewer Metrics] renderAllMessages: Rendered 0 top-level message DOM elements. 4chan OTK Thread Viewer.user.js:1994:21
+[OTK Viewer] Populated lastKnownMessageIds with 0 message IDs after full render. 4chan OTK Thread Viewer.user.js:2003:21
+[OTK Loading] Overlay SHOWN with message: "Processing tweets and embeds..." (textContent: "Processing tweets and embeds...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Loading] Overlay SHOWN with message: "Finalizing view..." (textContent: "Finalizing view...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Tweet DEBUG - renderAllMessages] PRE-CALL ensureTwitterWidgetsLoaded. Viewer element: 
+<div id="otk-thread-viewer" style="position: fixed; inset: …x: 9998; display: none;">
+ Is viewer connected: true 4chan OTK Thread Viewer.user.js:2013:17
+[OTK Tweet DEBUG - renderAllMessages] Twitter widgets supposedly loaded (or will be by processTweetEmbeds). PRE-CALL processTweetEmbeds. 4chan OTK Thread Viewer.user.js:2017:17
+[OTK Tweet DEBUG - renderAllMessages] POST-CALL processTweetEmbeds. (Call was commented out) 4chan OTK Thread Viewer.user.js:2019:17
+[OTK Viewer IO] Observing 0 media placeholders (selector now only .embed-placeholder). 4chan OTK Thread Viewer.user.js:2022:17
+[OTK Viewer LIFECYCLE] manageInitialScroll: First run after page load. Flag will be cleared. 4chan OTK Thread Viewer.user.js:767:17
+[OTK Scroll] manageInitialScroll: Entered 4chan OTK Thread Viewer.user.js:770:13
+[OTK Viewer Scroll] manageInitialScroll: No specific scroll target found or restored by anchor/selection, scrolling to newest message. 4chan OTK Thread Viewer.user.js:813:17
+[OTK Viewer] Main viewer display set to block after loading and scroll in manageInitialScroll. 4chan OTK Thread Viewer.user.js:828:17
+[OTK Loading] Overlay SHOWN with message: "Finalizing view and scroll position..." (textContent: "Finalizing view and scroll position...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Loading] Overlay HIDDEN. 4chan OTK Thread Viewer.user.js:203:21
+[OTK Viewer LIFECYCLE] manageInitialScroll: Processing complete, overlay hidden. 4chan OTK Thread Viewer.user.js:841:13
+[OTK Viewer LIFECYCLE] renderAllMessages: manageInitialScroll has completed. 4chan OTK Thread Viewer.user.js:2037:17
+[OTK Tracker] "Refresh Threads/Messages" button clicked: This will fetch the latest thread list and messages from 4chan, merging them with any locally stored data. The viewer will then be updated to show any new messages at the bottom. 4chan OTK Thread Tracker.user.js:351:13
+[OTK Tracker] Refresh button clicked, manual refresh process starting. 4chan OTK Thread Tracker.user.js:355:13
+[OTK Tracker Manual] Refreshing threads and messages (core logic)... 4chan OTK Thread Tracker.user.js:273:13
+XHRGET
+https://a.4cdn.org/b/catalog.json
+[HTTP/3 200  629ms]
+
+XHRGET
+https://a.4cdn.org/b/thread/936572524.json
+[HTTP/3 200  480ms]
+
+[OTK Viewer EXECUTION] Event: otkMessagesUpdated received. 4chan OTK Thread Viewer.user.js:2340:13
+[OTK Viewer] Manual refresh trigger detected. Attempting to append new messages. 4chan OTK Thread Viewer.user.js:2346:21
+[OTK Viewer] appendNewMessagesToFrame: Initiated. 4chan OTK Thread Viewer.user.js:2041:13
+[OTK Viewer] appendNewMessagesToFrame: Initiated. 4chan OTK Thread Viewer.user.js:2047:13
+[OTK Loading] Overlay SHOWN with message: "Fetching new messages..." (textContent: "Fetching new messages...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer] appendNewMessagesToFrame: Found 56 new messages to append. 4chan OTK Thread Viewer.user.js:2076:13
+[OTK Loading] Overlay SHOWN with message: "Processing new messages..." (textContent: "Processing new messages...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer] appendNewMessagesToFrame: Created new frame (divider) with ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2082:13
+[OTK Viewer] Rendering 1 new messages containing tweets fully. 4chan OTK Thread Viewer.user.js:2125:17
+[OTK Viewer] Directly embedding video player for: EmiGoddess1.webm in frame: undefined 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - unknown_context] createFullMedia: ENTER. File: EmiGoddess1, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - direct_media_unknown_frame] Creating video player for: EmiGoddess1.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - direct_media_unknown_frame] video.src set to: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK ConvertQuotes] Found Twitter URL (match): "https://x.com/fazedpiker/status/1940579278372196839", originalUrl (group1): "https://x.com/fazedpiker/status/1940579278372196839", Tweet ID: 1940579278372196839. 4chan OTK Thread Viewer.user.js:871:21
+[OTK ConvertQuotes] Calling createCustomTweetPlaceholderHTML with tweetId: "1940579278372196839", originalUrl: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:872:21
+[createCustomTweetPlaceholderHTML] Input - tweetId: "1940579278372196839", originalUrlInput: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:1226:13
+[createCustomTweetPlaceholderHTML] originalUrlInput is not an anchor string or not a string. Using as is (after String() conversion for escapedCleanUrl). Type: string 4chan OTK Thread Viewer.user.js:1245:17
+[createCustomTweetPlaceholderHTML] After cleaning attempt - cleanUrl: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:1247:13
+[createCustomTweetPlaceholderHTML] Escaped clean URL - escapedCleanUrl: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:1250:13
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: image-200.png (TIM: 1751516268711648) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: image-200, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Cache] Opening IndexedDB: OTKMediaCacheDB version 1 4chan OTK Thread Viewer.user.js:35:21
+[OTK Viewer] Directly embedding video player for: EmiGoddess1.webm in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: EmiGoddess1, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - otk-frame-1751517036643-8c51w] Creating video player for: EmiGoddess1.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - otk-frame-1751517036643-8c51w] video.src set to: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Directly embedding video player for: EmiGoddess1.webm in frame: undefined 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - unknown_context] createFullMedia: ENTER. File: EmiGoddess1, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - direct_media_unknown_frame] Creating video player for: EmiGoddess1.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - direct_media_unknown_frame] video.src set to: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Directly embedding video player for: 1750709128466818.webm in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1750709128466818, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - otk-frame-1751517036643-8c51w] Creating video player for: 1750709128466818.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - otk-frame-1751517036643-8c51w] video.src set to: https://i.4cdn.org/b/1751516423510944.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Directly embedding video player for: EmiGoddess1.webm in frame: undefined 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - unknown_context] createFullMedia: ENTER. File: EmiGoddess1, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - direct_media_unknown_frame] Creating video player for: EmiGoddess1.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - direct_media_unknown_frame] video.src set to: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1751480558769533.png (TIM: 1751516423703533) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1751480558769533, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: Screenshot 2025-07-02 191300.png (TIM: 1751516455445585) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: Screenshot 2025-07-02 191300, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: Tectone-Genshin-streamer.jpg (TIM: 1751516479127507) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: Tectone-Genshin-streamer, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: image.png (TIM: 1751516516427890) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: image, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: LEEam.png (TIM: 1751516535561848) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: LEEam, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: Screenshot 2025-07-02 191300.png (TIM: 1751516455445585) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1751344273966754.jpg (TIM: 1751516597548252) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1751344273966754, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1751509719489970.png (TIM: 1751516601290787) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1751509719489970, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: LEEam.png (TIM: 1751516535561848) in frame: undefined 2 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: image-200.png (TIM: 1751516268711648) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 20250531_044727.jpg (TIM: 1751516659563317) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 20250531_044727, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 0d83f-17069641862010-1920.jpg (TIM: 1751516673250528) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 0d83f-17069641862010-1920, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: ezgif-58355ff3154f32.gif (TIM: 1751516683756600) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: ezgif-58355ff3154f32, Post: undefined, Ext: .gif 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: LEEam.png (TIM: 1751516535561848) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1751510372149718.png (TIM: 1751516689688338) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1751510372149718, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751344273966754.jpg (TIM: 1751516597548252) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: Peekapoo.jpg (TIM: 1751516708739376) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: Peekapoo, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 290098654809655101.png (TIM: 1751516745498272) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 290098654809655101, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: image-200.png (TIM: 1751516268711648) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1751490133085553.jpg (TIM: 1751516774653169) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1751490133085553, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751344273966754.jpg (TIM: 1751516597548252) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: Peekapoo.jpg (TIM: 1751516708739376) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Directly embedding video player for: 1750606861148028.mp4 in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1750606861148028, Post: undefined, Ext: .mp4 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - otk-frame-1751517036643-8c51w] Creating video player for: 1750606861148028.mp4 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - otk-frame-1751517036643-8c51w] video.src set to: https://i.4cdn.org/b/1751516806443816.mp4 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 2023855.png (TIM: 1751516836122765) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 2023855, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Directly embedding video player for: EmiGoddess1.webm in frame: undefined 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - unknown_context] createFullMedia: ENTER. File: EmiGoddess1, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - direct_media_unknown_frame] Creating video player for: EmiGoddess1.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - direct_media_unknown_frame] video.src set to: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK ConvertQuotes] Found Twitter URL (match): "https://x.com/fazedpiker/status/1940579278372196839", originalUrl (group1): "https://x.com/fazedpiker/status/1940579278372196839", Tweet ID: 1940579278372196839. 4chan OTK Thread Viewer.user.js:871:21
+[OTK ConvertQuotes] Calling createCustomTweetPlaceholderHTML with tweetId: "1940579278372196839", originalUrl: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:872:21
+[createCustomTweetPlaceholderHTML] Input - tweetId: "1940579278372196839", originalUrlInput: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:1226:13
+[createCustomTweetPlaceholderHTML] originalUrlInput is not an anchor string or not a string. Using as is (after String() conversion for escapedCleanUrl). Type: string 4chan OTK Thread Viewer.user.js:1245:17
+[createCustomTweetPlaceholderHTML] After cleaning attempt - cleanUrl: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:1247:13
+[createCustomTweetPlaceholderHTML] Escaped clean URL - escapedCleanUrl: "https://x.com/fazedpiker/status/1940579278372196839" 4chan OTK Thread Viewer.user.js:1250:13
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751344273966754.jpg (TIM: 1751516597548252) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: Peekapoo.jpg (TIM: 1751516708739376) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Directly embedding video player for: 1750606861148028.mp4 in frame: undefined 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - unknown_context] createFullMedia: ENTER. File: 1750606861148028, Post: undefined, Ext: .mp4 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - direct_media_unknown_frame] Creating video player for: 1750606861148028.mp4 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - direct_media_unknown_frame] video.src set to: https://i.4cdn.org/b/1751516806443816.mp4 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: channels4_profile.jpg (TIM: 1751516920482005) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: channels4_profile, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1750190960361515.jpg (TIM: 1751516958639664) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1750190960361515, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: IMG_4979.jpg (TIM: 1751516999065741) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: IMG_4979, Post: undefined, Ext: .jpg 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: emgent.png (TIM: 1751517007755834) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: emgent, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: IMG_4979.jpg (TIM: 1751516999065741) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Directly embedding video player for: 1750434666363213.webm in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1861:25
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1750434666363213, Post: undefined, Ext: .webm 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Direct Video - otk-frame-1751517036643-8c51w] Creating video player for: 1750434666363213.webm 4chan OTK Thread Viewer.user.js:1762:29
+[OTK Direct Video - otk-frame-1751517036643-8c51w] video.src set to: https://i.4cdn.org/b/1751517024328439.webm 4chan OTK Thread Viewer.user.js:1766:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751509719489970.png (TIM: 1751516601290787) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 290098654809655101.png (TIM: 1751516745498272) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering REPEAT image as thumbnail: 1751490133085553.jpg (TIM: 1751516774653169) in frame: undefined 4chan OTK Thread Viewer.user.js:1868:29
+[OTK Viewer] Rendering FIRST instance of image as FULL-SIZE: 1688946520351300.png (TIM: 1751517034765194) in frame: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:1874:29
+[OTK Video Debug - otk-frame-1751517036643-8c51w] createFullMedia: ENTER. File: 1688946520351300, Post: undefined, Ext: .png 4chan OTK Thread Viewer.user.js:1663:25
+[OTK Viewer] Appended 56 new messages (tweets fully rendered: 1, other: 55). lastKnownMessageIds size: 56 4chan OTK Thread Viewer.user.js:2157:13
+[OTK Video Debug] appendNewMessagesToFrame: Processing 9 collected video elements for frame otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2161:17
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516359692434.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516359692434.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516359692434.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516423510944.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516423510944.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516359692434.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516806443816.mp4 ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516806443816.mp4 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516359692434.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751516806443816.mp4 ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751516806443816.mp4 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Video Debug] appendNewMessagesToFrame: Found video in newly appended content. SRC: https://i.4cdn.org/b/1751517024328439.webm ID: <empty string> . Attaching event listeners and calling .load(). 4chan OTK Thread Viewer.user.js:2164:21
+GET
+https://i.ytimg.com/vi/NJWgv2KbZC0/mqdefault.jpg
+[HTTP/2 200  28ms]
+
+GET
+https://i.ytimg.com/vi/7KWI9A-Ng_E/mqdefault.jpg
+[HTTP/2 200  39ms]
+
+[OTK Video Debug] appendNewMessagesToFrame: Attempting to load video: https://i.4cdn.org/b/1751517024328439.webm 4chan OTK Thread Viewer.user.js:2178:26
+[OTK Loading] Overlay SHOWN with message: "Observing new media and processing embeds..." (textContent: "Observing new media and processing embeds...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer IO] Observing 53 new media placeholders added by append. 4chan OTK Thread Viewer.user.js:2190:17
+[OTK Viewer Tweets DEBUG] appendNewMessagesToFrame: Calling processTweetEmbeds for viewer div after appending new frame. 4chan OTK Thread Viewer.user.js:2209:13
+[OTK Loading] Overlay SHOWN with message: "Finalizing new content display..." (textContent: "Finalizing new content display...") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer] appendNewMessagesToFrame: Finished processing new messages. 4chan OTK Thread Viewer.user.js:2224:13
+[OTK Tracker Manual] Core refresh actions complete. 4chan OTK Thread Tracker.user.js:309:17
+[OTK Viewer] New messages appended by manual refresh. Finalizing display shortly. 4chan OTK Thread Viewer.user.js:2365:25
+[OTK Loading] Overlay SHOWN with message: "New messages loaded." (textContent: "New messages loaded.") 4chan OTK Thread Viewer.user.js:193:21
+[OTK Viewer] Manual refresh process (append attempt) complete. 4chan OTK Thread Viewer.user.js:2375:21
+[OTK Tracker] Refresh button process finished, flag reset. 4chan OTK Thread Tracker.user.js:363:17
+[OTK Cache] Database opened successfully. 4chan OTK Thread Viewer.user.js:50:25
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516268711648.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516423703533.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516455445585.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516479127507.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516516427890.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516535561848.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516455445585s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516455445585s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516597548252.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516535561848s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516535561848s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516535561848s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516535561848s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516268711648s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516268711648s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516659563317.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516673250528.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516683756600.gif IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516535561848s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516535561848s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516689688338.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516597548252s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516597548252s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516708739376.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516268711648s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516268711648s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516597548252s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516597548252s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516708739376s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516708739376s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516836122765.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516597548252s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516597548252s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516708739376s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516708739376s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516920482005.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516958639664.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516999065741.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751517007755834.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+GET
+data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"%3E%3Crect width="120" height="120" fill="%23e0e0e0"%3E%3C/rect%3E%3Ctext x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="14px" fill="%23757575"%3EImg N/A%3C/text%3E%3C/svg%3E
+
+GET
+data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="150" viewBox="0 0 200 150"%3E%3Crect width="200" height="150" fill="%23d3d3d3"%3E%3C/rect%3E%3Ctext x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16px" fill="%23707070"%3EImage Unavailable%3C/text%3E%3C/svg%3E
+
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516999065741s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516999065741s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516601290787s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516601290787s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516745498272s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516745498272s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createThumbnail: Error in async loading logic or getMedia for https://i.4cdn.org/b/1751516774653169s.jpg IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1647:33
+[OTK Cache/Thumb] Thumbnail failed to load definitively for original src: https://i.4cdn.org/b/1751516774653169s.jpg 4chan OTK Thread Viewer.user.js:1581:29
+[OTK Cache] createFullMedia (Image): Error in async loading logic or getMedia for https://i.4cdn.org/b/1751517034765194.png IDBDatabase.transaction: 'mediaFilesStore' is not a known object store name 4chan OTK Thread Viewer.user.js:1744:37
+[OTK Viewer Media] Full-size image failed to load (onerror triggered for): <empty string> 4chan OTK Thread Viewer.user.js:1687:33
+[handleIntersection Entry] type: custom-twitter, id: 1940579278372196839, intersecting: true, loaded: undefined 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection CustomTweet] id: 1940579278372196839, intersecting: true, loaded: undefined 4chan OTK Thread Viewer.user.js:217:25
+[handleIntersection CustomTweet] Is Intersecting. Checking loaded state... current: "undefined" 4chan OTK Thread Viewer.user.js:219:29
+[CustomTweet IO] Custom tweet 1940579278372196839 is intersecting. Current loaded state is "undefined". Attempting to load. URL: <a href= 4chan OTK Thread Viewer.user.js:224:33
+[fetchAndRenderCustomTweet] Called for tweetId: "1940579278372196839", originalUrl from dataset: "<a href=" 4chan OTK Thread Viewer.user.js:1282:13
+[fetchAndRenderCustomTweet] Target element: 
+<div class="custom-tweet-placeholder embed-placeholder" data-embed-type="custom-twitter" data-tweet-id="1940579278372196839" data-original-url="<a href=" https:="" x.com="" fazedpiker="" status="" 1940579278372196839"="" target="_blank" rel="noopener noreferrer">
+4chan OTK Thread Viewer.user.js:1283:13
+[fetchAndRenderCustomTweet] Attempting to parse originalUrl: "<a href=" 4chan OTK Thread Viewer.user.js:1320:17
+[fetchAndRenderCustomTweet] urlParts from match: null 4chan OTK Thread Viewer.user.js:1324:17
+[fetchAndRenderCustomTweet] Failed to parse URL or urlParts too short. originalUrl: "<a href=", urlParts: null 4chan OTK Thread Viewer.user.js:1327:21
+[fetchAndRenderCustomTweet] Error for tweetId 1940579278372196839. Original URL: "<a href=". Error: Invalid tweet URL for API construction. URL was: "<a href=" fetchAndRenderCustomTweet@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Viewer.user.js#37:1328:19
+VMhf76pwoszd5/handleIntersection/<@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Viewer.user.js#37:225:50
+handleIntersection@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Viewer.user.js#37:208:17
+IntersectionCallback*renderAllMessages@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Viewer.user.js#37:1908:25
+async*toggleViewer@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Viewer.user.js#37:2240:13
+VMfa7l4et1o9g/<@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Tracker.user.js#36:347:16
+EventListener.handleEvent*VMfa7l4et1o9g/<@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Tracker.user.js#36:346:21
+VMfa7l4et1o9g/<@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Tracker.user.js#36:394:3
+VMfa7l4et1o9g@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Tracker.user.js#36:395:3
+rn@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/sandbox/injected-web.js:1:15907
+@moz-extension://837bdca8-a273-48db-9c98-597842ae96a2/%204chan%20OTK%20Thread%20Tracker.user.js#36:1:1
+4chan OTK Thread Viewer.user.js:1412:17
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: youtube, id: NJWgv2KbZC0, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: twitch-vod, id: 2501970083, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: custom-twitter, id: 1940579278372196839, intersecting: false, loaded: undefined 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection CustomTweet] id: 1940579278372196839, intersecting: false, loaded: undefined 4chan OTK Thread Viewer.user.js:217:25
+[handleIntersection CustomTweet] Not intersecting: 1940579278372196839 4chan OTK Thread Viewer.user.js:237:29
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: youtube, id: 7KWI9A-Ng_E, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: f2xjko, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: qluabk, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: klgboi, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+[handleIntersection Entry] type: streamable, id: 1uiprg, intersecting: false, loaded: false 4chan OTK Thread Viewer.user.js:214:21
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  66ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  116ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  123ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  164ms]
+
+GET
+https://i.4cdn.org/b/1751516423510944.webm
+[HTTP/3 206  157ms]
+
+GET
+https://i.4cdn.org/b/1751517024328439.webm
+[HTTP/3 206  1022ms]
+
+GET
+https://i.4cdn.org/b/1751516806443816.mp4
+[HTTP/3 206  189ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  188ms]
+
+GET
+https://i.4cdn.org/b/1751516806443816.mp4
+[HTTP/3 206  165ms]
+
+GET
+https://i.4cdn.org/b/1751516423510944.webm
+[HTTP/3 206  308ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  291ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  267ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  257ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  364ms]
+
+GET
+https://i.4cdn.org/b/1751516806443816.mp4
+[HTTP/3 206  342ms]
+
+GET
+https://i.4cdn.org/b/1751516359692434.webm
+[HTTP/3 206  340ms]
+
+GET
+https://i.4cdn.org/b/1751517024328439.webm
+[HTTP/3 206  1034ms]
+
+GET
+https://i.4cdn.org/b/1751516806443816.mp4
+[HTTP/3 206  369ms]
+
+[OTK Direct Video - direct_media_unknown_frame] SUSPEND for https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - otk-frame-1751517036643-8c51w] SUSPEND for https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - direct_media_unknown_frame] SUSPEND for https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - otk-frame-1751517036643-8c51w] SUSPEND for https://i.4cdn.org/b/1751516423510944.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - direct_media_unknown_frame] SUSPEND for https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - otk-frame-1751517036643-8c51w] SUSPEND for https://i.4cdn.org/b/1751516806443816.mp4 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - direct_media_unknown_frame] SUSPEND for https://i.4cdn.org/b/1751516359692434.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - direct_media_unknown_frame] SUSPEND for https://i.4cdn.org/b/1751516806443816.mp4 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - otk-frame-1751517036643-8c51w] LOADEDDATA for https://i.4cdn.org/b/1751516423510944.webm. ReadyState: 4 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516423510944.webm Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Direct Video - direct_media_unknown_frame] LOADEDDATA for https://i.4cdn.org/b/1751516359692434.webm. ReadyState: 4 3 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516359692434.webm Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Direct Video - direct_media_unknown_frame] LOADEDDATA for https://i.4cdn.org/b/1751516359692434.webm. ReadyState: 4 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516359692434.webm Frame ID: otk-frame-1751517036643-8c51w 2 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Direct Video - otk-frame-1751517036643-8c51w] LOADEDDATA for https://i.4cdn.org/b/1751516359692434.webm. ReadyState: 4 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Direct Video - otk-frame-1751517036643-8c51w] LOADEDDATA for https://i.4cdn.org/b/1751516806443816.mp4. ReadyState: 4 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Direct Video - direct_media_unknown_frame] LOADEDDATA for https://i.4cdn.org/b/1751516806443816.mp4. ReadyState: 4 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516359692434.webm Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516806443816.mp4 Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516359692434.webm Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751516806443816.mp4 Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Direct Video - otk-frame-1751517036643-8c51w] SUSPEND for https://i.4cdn.org/b/1751517024328439.webm 4chan OTK Thread Viewer.user.js:1791:60
+[OTK Direct Video - otk-frame-1751517036643-8c51w] LOADEDDATA for https://i.4cdn.org/b/1751517024328439.webm. ReadyState: 4 4chan OTK Thread Viewer.user.js:1780:63
+[OTK Video Debug] appendNewMessagesToFrame: onloadeddata event for video: https://i.4cdn.org/b/1751517024328439.webm Frame ID: otk-frame-1751517036643-8c51w 4chan OTK Thread Viewer.user.js:2174:51
+[OTK Loading] Overlay HIDDEN. 4chan OTK Thread Viewer.user.js:203:21
+[OTK Viewer Scroll] Cleared lastScrolledMessageId due to explicit selection. 4chan OTK Thread Viewer.user.js:1465:29
+GET
+data:image/png;base64,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
+
+GET
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEaklEQVRYR+1XTWicRRh+v9m/bmKyLSbb0qa1iZTW2lbUNv5AoVaqeBIESS8ePAQPHnIQxBLwIPQqClWLCD0IHnr0oEHTgoSGFtmC1rJu26RmddN0Tdm/ZLP7ffvN+M7MN983M9lepJBLPtjMzDs/z/M+7zs/cWCDP2eD8WGTQKgAuzQ8SQEmGXPSPCyOA4wxwD8ySIzCNFrPJF+fyz3KsIUE6KXhFnOcJKUYFg4qCSAPxMYSGDc7pXaLnci8OXfnUZEICXSmR1AAROM/DsirAjRQIFSCXHEIfMJ85ioSHZ2N0ZAduolRQhPUL/S9NVcWSqu57s8jFL0XkgusoJRkHCQj7bHMficxOIomIkWiFAsfe+RkB3xhY6KNdoyd7JN1xnzqVhYu952cPmUQqE0dYX4ii44RHI/TBTADgsvzejyZZj3bn3VS/XsA/BUcE4CKxRWIqnO2ysZpc3ChrbD7XhMSh78UzocKtG5/yhK9g4EhWEgsEkwWHnBQTy6ugyoSwsaB9PmqrZOiQJ763CRASxdQZoyWYKoYq1IH5AtxIjbQw7zX7HxdlJOvTw5+YRH452vsUUkQAHT1MgA2vAzmCeIil7sopIhLQuTp8xaBv79CBTRPRbweokAIZMdaEemWF2ZSkkPfWASK5wIFtIQKFQlsdmyN5NNCsi48Wh4Fa5DDF0wC3t3PBAEn3E4SVLXDxFLKBBktJVdKKBL69tPViHKLHPk2IjA/Pz+apKVrzFsB2lnDXb8CaacC29IN3IY6gJXdBnigEj9MjK2pzggzLOSZ7yIC+Xz+vOe579XrDXBdV/y8tfsAD36ArY/vEA6u1LCNlcf6s6I027x/SfZngv4qHw+yjTuruvwX9D35LrRhAKrVKoyNjUUEcrnc9Orq6qvlchn4ceh5HmSzWbid/xV27t4nFlouF0U5kMWD6H+05/6chV17DkI8tQ0qlQqMj49HBGZmZi42m6tvDwwMQqFQEApkejxIkQaUi1eFZ7tGXhbApfnZqI3KGG2732rXWz1A41lYXFyEiYmJiMDU1NT77bX6ue07hiAWT0Cz2QS/WYQDmauwJRkLYqpnuXVedN0d9ngKbZoBz8fbwu/A8CktB7hntd/OsIX2cWh4GUEg3inBi7tvQCohLuQo08OLRz//taw3dsf67aeOcHL0R3Mbrt38iOVrL0Gt3S8IJPxFOD58UxLQPdRvt3WnoX0iWneKRo4c+8ki8MeH7PcHx+De/apIwt4tAK/sy0MqzsdZ+7obsGHTx+t3RmQno5ctAjc+YNfLz8O/ty7C/r0ZuFV/Dl47UEAFeIDQE7G/9UtKD4vq08Oi6trlpYWPvPCLSaBx7Z1mrnIyvbxwBfbu7IVibQjeOHRHEgjvCMuzrvlgH0TmAYSvFXBbHTd9YjbFXQvfA0vfH51cqm/9uOXFkr5PIRVrwxODHsTEs4R/8nmK8+VzLbSq3qCU/WK0fNjqs4WQLXwUnR06ff2sQUBgbMC3+Y/JpgIbrsB/CKCnTsr63mQAAAAASUVORK5CYII=
+
+GET
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD10lEQVRYR8WXT0sbQRjGx5ochdiDUD9NCv0CBUGDMWqsMQFtVaIYMRJpa9Wo+WsUFZXozXtBIcxevHkRpF6rUChCEtGmwcQkndmZ2Z3dbJJJEVyIzs7O7vt7n/fZd3dbwAtvLS8cHxgCHB0dwY6ODmulUgEVRFgpy3/lMcBzbB79x/t0Wl5RKBRAqVTKP9zfd52enp4cHx+X6iVZE6C7u1sBIJHlMHSITsOB8dn0GMUAmXQa5HI58Pv2Nv3j8tLhdru/Nw1weHgIe3ps1ru7LCgUi0oQdaBGJqqoIQqFR3mnra0NnJ+f56+vr7tSqVRNJQwVSCaT0GbDAHf/BVAul4HFYpHLcXV1lUY/x+joqKEShgAHB0nY22uzZhFAUUQBTuPC46N8DgbAIBji4uICKfHr/diY50RfjhoABwig15rNUgDlLE5rpjybolfCAGdnZ8So9IdMCR7+5FLjnz6+EwLY39+HdrtdB8BHYpbTmhAz4GB/83nFtCaTCbS3vwaorNLkxPjbJgGypATKpjMfMyDTUXdH4MMMIJ7YkLwTE2IAe3t70N7XhxTIgicNgIqiuJ+7I7U3BO4RCMBMFIhvxCXv5KQYwO7uLnT098slIABq7bmWQGi47KscwgPEopLX620CwIEBkAJPfAl0LYFlTyujB8C9ykwViCGAKVGAHaRAv6yA3gPapsMbyih7PMcAotGoND0lqMDOzg4CGCAAVAE5SXxFKrnciWtkzrdnFSCCAKbESrC1vQ2dAxSg+KTWmUKwwFrTMT3w/a9qQwDaQTgSkWamp8UBBgcGNR5gz57qB5CuEMT8yiYDWNpBKByRfDOiAFtbcNDppABIAV2q2nqrmePI+mNm1IgsWIFwCAHMiCmwubkFh4ac1kwG3wUUgMapDq52HyMw0oiQAqGQNOsTBEhsbiKAIWsWARR1ALpWJKdsrAgxjMlslgHWQuvSnM8npkAigQA+1APQ9FxjAOpEBWAdAcwKAsTjCTjs+sApwOWojc07kBNHXc8AVlfXJP/crJgCsXgcuoZdyIQZUoLq+MaBDeqhAgQRwJw4wDADwH2g4VbbCAwgGAxK835BgGgsBl2uEaJAQ4B6LsRPQ2LC5eCKFPD7xRQIR2PQPVIHgG91DdRRAFYQwLwwQBS6sQLorVhVoH6mtTgYwNLSsrQQmBdTIBQOQ4/bY83UeSFpaAu6gAEsLn2TPgcCTQB4PNZSqSwap+661tZX4OsiAlgQBFgPhWFn5xv0ZUQeAmX5E4yMyZDs47defo7s8nN0DZr7eXMjfREFeJa0BS9i+F0geO6zLPsHRoKCPxS5oCIAAAAASUVORK5CYII=
+

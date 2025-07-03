@@ -11,8 +11,8 @@
     'use strict';
     console.log('[OTK Viewer EXECUTION] Script starting to execute.');
 
-    let twitterWidgetsLoaded = false;
-    let twitterWidgetsLoading = false;
+    // let twitterWidgetsLoaded = false; // REMOVED - No longer using Twitter widgets.js
+    // let twitterWidgetsLoading = false; // REMOVED
     let embedObserver = null;
     let isFirstRunAfterPageLoad = true;
 
@@ -170,7 +170,7 @@
     // ---> END OF MOVED BLOCK <---
 
     // Storage keys (must match tracker script)
-    const THREADS_KEY = 'otkActiveThreads';
+    // const THREADS_KEY = 'otkActiveThreads'; // Already defined globally, ensure only one definition
     const MESSAGES_KEY = 'otkMessagesByThreadId';
     const COLORS_KEY = 'otkThreadColors';
     const SELECTED_MESSAGE_KEY = 'otkSelectedMessageId';
@@ -346,75 +346,75 @@
             }
 
             // Twitter loading logic (handleIntersection)
-            if (embedType === 'twitter') {
+            if (embedType === 'twitter') { // This is the old embed type for widgets.js
                 // 'placeholder' is the 'tweet-content-container' div.
                 // We need to find the 'twitter-widget-target' inside it.
                 const widgetTarget = placeholder.querySelector('.twitter-widget-target');
 
                 if (!widgetTarget) {
-                    console.error('[OTK Viewer IO] Twitter placeholder has no .twitter-widget-target child.', placeholder);
+                    console.error('[OTK Viewer IO] Old Twitter placeholder has no .twitter-widget-target child.', placeholder);
                     return; // Skip this entry
                 }
-
-                if (entry.isIntersecting) {
-                    if (!isLoaded) { // 'isLoaded' refers to placeholder.dataset.loaded
-                        console.log(`[OTK Viewer IO] Loading Tweet: ${placeholder.dataset.tweetId} into target:`, widgetTarget);
-                        // The widgetTarget should already contain the tweet-reserved-space or "Loading tweet..."
+                 // This section is for the old twitter embed type, which we are phasing out.
+                 // For now, we'll leave its existing logic, but it should become dead code
+                 // once all tweet links are converted to 'custom-twitter' type.
+                console.warn('[OTK Viewer IO] Encountered old data-embed-type="twitter". This should be phased out.');
+                 if (entry.isIntersecting) {
+                    if (!isLoaded) {
+                        console.log(`[OTK Viewer IO] Attempting to load OLD Tweet Widget: ${placeholder.dataset.tweetId}`);
                         ensureTwitterWidgetsLoaded().then(() => {
-                            createTweetWithTimeout(placeholder.dataset.tweetId, widgetTarget, { // widgetTarget is passed to be filled
-                                theme: 'light',
-                                conversation: 'none',
-                                align: 'center',
-                                width: 500,
-                                dnt: true
-                            }).then((tweetElement) => { // createTweetWithTimeout resolves with the tweetElement (or null)
-                                if (tweetElement) { // Successfully loaded and rendered
-                                    placeholder.dataset.loaded = 'true';
-                                    placeholder.style.height = 'auto'; // Adjust to content
-                                    placeholder.style.minHeight = '0';   // Allow shrinking
-                                    placeholder.style.backgroundColor = 'transparent';
-                                } else { // Tweet loaded but was empty/unavailable (handled by createTweetWithTimeout resolving with null/undefined)
-                                    placeholder.dataset.loaded = 'true'; // Still "loaded" in terms of processing
-                                    placeholder.style.height = 'auto';
-                                    placeholder.style.minHeight = '100px'; // Smaller height for "unavailable" message
-                                    placeholder.style.backgroundColor = '#f0f0f0'; // Light grey for error/notice
-                                }
-                            }).catch(() => { // Catch for createTweetWithTimeout promise itself
-                                placeholder.dataset.loaded = 'false'; // Failed to load/process by createTweetWithTimeout
-                                placeholder.style.height = 'auto';
-                                placeholder.style.minHeight = '100px'; // Smaller height for error message
-                                placeholder.style.backgroundColor = '#f0f0f0';
-                                // The error message within widgetTarget is already set by createTweetWithTimeout's internal catch
-                                // but ensure widgetTarget is visible if it wasn't.
-                                if (!widgetTarget.querySelector('.twitter-tweet') && widgetTarget.textContent.includes('Failed to load tweet')) {
-                                     // Error message is already there.
-                                } else if (!widgetTarget.querySelector('.twitter-tweet')) { // General check if tweet not embedded
-                                    widgetTarget.innerHTML = `<div class="tweet-reserved-space" style="height: 100px; width: 100%; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #cc0000; font-size: 12px;">Error loading tweet. <a href="${placeholder.dataset.originalUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2;">View on Twitter</a></div>`;
-                                }
-                            });
-                        }).catch(error => { // Catch for ensureTwitterWidgetsLoaded promise
-                            console.error('[OTK Viewer IO] Failed to load Twitter widgets script for tweet.', error);
-                            widgetTarget.innerHTML = `<div class="tweet-reserved-space" style="height: 100px; width: 100%; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #cc0000; font-size: 12px;">Twitter script failed. <a href="${placeholder.dataset.originalUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2;">View on Twitter</a></div>`;
-                            placeholder.dataset.loaded = 'false';
-                            placeholder.style.height = 'auto';
-                            placeholder.style.minHeight = '100px'; // Smaller height for this error too
-                            placeholder.style.backgroundColor = '#f0f0f0';
+                            createTweetWithTimeout(placeholder.dataset.tweetId, widgetTarget, {
+                                theme: 'light', conversation: 'none', align: 'center', width: 500, dnt: true
+                            }).then(tweetElement => {
+                                if (tweetElement) { placeholder.dataset.loaded = 'true'; /* ... styles ... */ }
+                                else { /* ... error/empty styles ... */ }
+                            }).catch(() => { /* ... error styles ... */ });
+                        }).catch(error => {
+                            widgetTarget.innerHTML = `<div>Old widget script failed. <a href="${placeholder.dataset.originalUrl}" target="_blank">View</a></div>`;
                         });
                     }
-                } else { // Out of view (entry.isIntersecting is false)
-                    if (isLoaded) { // 'isLoaded' refers to placeholder.dataset.loaded
-                        console.log(`[OTK Viewer IO] Unloading Tweet: ${placeholder.dataset.tweetId}`);
-                        // Restore the empty reserved space div within the widgetTarget, matching initial reserved height
-                        widgetTarget.innerHTML = `<div class="tweet-reserved-space" style="height: 600px; width: 100%; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; font-style: italic; color: #888;">Loading tweet...</div>`;
-                        placeholder.dataset.loaded = 'false'; // Mark the main placeholder as not loaded
-                        placeholder.style.minHeight = '600px'; // Restore initial min-height
-                        placeholder.style.height = ''; // Remove fixed height if any was set
-                        placeholder.style.backgroundColor = '#f9f9f9'; // Restore initial placeholder bg
+                } else { // Out of view
+                    if (isLoaded) {
+                        console.log(`[OTK Viewer IO] Unloading OLD Tweet Widget: ${placeholder.dataset.tweetId}`);
+                        widgetTarget.innerHTML = `<div style="height: 100px; background: #eee;">Old tweet unloaded</div>`;
+                        placeholder.dataset.loaded = 'false';
                     }
                 }
-                return; // Handled twitter, skip other embed types for this entry
+                return; // Handled old twitter type
+            } else if (embedType === 'custom-twitter') {
+                if (entry.isIntersecting) {
+                    if (placeholder.dataset.loaded === 'false') { // Check our specific loaded flag
+                        const tweetId = placeholder.dataset.tweetId;
+                        const originalUrl = placeholder.dataset.originalUrl;
+                        console.log(`[CustomTweet IO] Custom tweet ${tweetId} is intersecting. Loading.`);
+                        // Call the new function to fetch and render data
+                        fetchAndRenderCustomTweet(tweetId, originalUrl, placeholder)
+                            .catch(err => { // fetchAndRenderCustomTweet handles its own internal errors by updating the placeholder
+                                console.error(`[CustomTweet IO] fetchAndRenderCustomTweet promise rejected for ${tweetId}:`, err);
+                                // Ensure placeholder is marked loaded even if the function's internal error display failed
+                                placeholder.dataset.loaded = 'true';
+                            });
+                        // fetchAndRenderCustomTweet will set placeholder.dataset.loaded = 'true' internally
+                    }
+                } else {
+                    // Out of view for custom-twitter
+                    // We could clear the content to save memory, but it's fixed size.
+                    // For now, do nothing on scroll out for simplicity, as it's not required.
+                    // If we wanted to revert to "Loading..." state:
+                    // if (placeholder.dataset.loaded === 'true') {
+                    //     const loadingDiv = placeholder.querySelector('.custom-tweet-loading');
+                    //     const contentTextDiv = placeholder.querySelector('.custom-tweet-text-content');
+                    //     const mediaDiv = placeholder.querySelector('.custom-tweet-media');
+                    //     if (contentTextDiv) contentTextDiv.innerHTML = '';
+                    //     if (mediaDiv) mediaDiv.innerHTML = '';
+                    //     if (loadingDiv) loadingDiv.style.display = 'flex';
+                    //     placeholder.dataset.loaded = 'false'; // Allow re-load on next intersection
+                    //     console.log(`[CustomTweet IO] Custom tweet ${placeholder.dataset.tweetId} scrolled out, reset to loading.`);
+                    // }
+                }
+                return; // Handled custom-twitter type
             }
-            // Existing logic for other embed types continues here...
+            // Existing logic for other embed types (youtube, streamable, etc.) continues here...
         });
     }
 
@@ -523,236 +523,8 @@
         }
     }
 
-    function ensureTwitterWidgetsLoaded() {
-        console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] Called.'); // Added
-        return new Promise((resolve, reject) => {
-            if (twitterWidgetsLoaded && window.twttr && typeof window.twttr.widgets === 'object' && typeof window.twttr.widgets.createTweet === 'function') {
-                console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] Widgets already loaded and function exists. Resolving.'); // Added
-                resolve();
-                return;
-            }
-            // If already loading, set up a poller
-            if (twitterWidgetsLoading) {
-                console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] Widgets currently loading by another call. Starting poller.'); // Added
-                let attempts = 0;
-                const interval = setInterval(() => {
-                    attempts++;
-                    if (twitterWidgetsLoaded && window.twttr && typeof window.twttr.widgets === 'object' && typeof window.twttr.widgets.createTweet === 'function') {
-                        clearInterval(interval);
-                        console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] Poller success: Widgets loaded.'); // Added
-                        resolve();
-                    } else if (attempts > 60) { // Timeout after ~6 seconds (60 * 100ms)
-                        clearInterval(interval);
-                        console.error('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] Poller TIMEOUT waiting for Twitter widgets.'); // Added
-                        reject(new Error('Timeout waiting for Twitter widgets.js to load after initiation.'));
-                    }
-                }, 100);
-                return; // The promise is already being handled by the first call that set twitterWidgetsLoading = true.
-            }
-
-            twitterWidgetsLoading = true;
-            console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] Creating script element for widgets.js.'); // Added
-            const script = document.createElement('script');
-            script.id = 'twitter-widgets-script';
-            script.src = 'https://platform.twitter.com/widgets.js';
-            script.async = true;
-            script.charset = 'utf-8';
-            script.onload = () => {
-                console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] widgets.js script.onload fired.'); // Added
-                twitterWidgetsLoaded = true;
-                twitterWidgetsLoading = false;
-                if (window.twttr && typeof window.twttr.widgets === 'object' && typeof window.twttr.widgets.createTweet === 'function') {
-                    console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] twttr.widgets.createTweet found in onload. Resolving after short delay.'); // Added
-                    // Add a small delay for widgets.js to fully initialize after script load event
-                    setTimeout(resolve, 100);
-                } else {
-                     console.warn('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] widgets.js loaded but createTweet not immediately found in onload. Relying on 500ms safety check or other polls.'); // Added
-                    // The polling mechanism for 'twitterWidgetsLoading' should catch it if it initializes shortly after.
-                    // console.warn('Twitter widgets.js loaded but twttr.widgets.createTweet not immediately found. Will rely on polling if initiated by another call.'); // Original log
-                    // To be safe, reject if it's not found after a brief moment.
-                    setTimeout(() => {
-                        if (window.twttr && typeof window.twttr.widgets === 'object' && typeof window.twttr.widgets.createTweet === 'function') {
-                            console.log('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] createTweet found in 500ms safety check.'); // Added
-                            resolve();
-                        } else {
-                            console.error('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] createTweet NOT found even after 500ms safety check in onload. Rejecting.'); // Added
-                            reject(new Error('Twitter widgets.js loaded but twttr.widgets.createTweet not found after delay.'));
-                        }
-                    }, 500);
-                }
-            };
-            script.onerror = () => {
-                console.error('[OTK Tweet DEBUG - ensureTwitterWidgetsLoaded] FAILED to load Twitter widgets.js script (onerror).'); // Added
-                twitterWidgetsLoading = false;
-                reject(new Error('Failed to load Twitter widgets.js script.'));
-            };
-            document.head.appendChild(script);
-        });
-    }
-
-    // MODIFIED FUNCTION (createTweetWithTimeout)
-    function createTweetWithTimeout(tweetId, placeholderElement, options, timeoutMs = 40000) {
-        const originalUrl = placeholderElement.dataset.originalUrl || `https://twitter.com/unknown/status/${tweetId}`;
-        console.log(`[OTK TweetDebug] createTweetWithTimeout: ENTER - Tweet ID: ${tweetId}, Placeholder ID: ${placeholderElement.id}, URL: ${originalUrl}, Timeout: ${timeoutMs}ms`);
-
-        return new Promise((resolve, reject) => {
-            let timeoutHandle = setTimeout(() => {
-                placeholderElement.textContent = `Tweet ${tweetId} loading timed out.`; // Updated placeholder text
-                placeholderElement.style.color = 'orange';
-                console.warn(`[OTK TweetDebug] createTweetWithTimeout: Set placeholder ${placeholderElement.id} text to 'Timed out' for Tweet ID ${tweetId}.`); // Added log
-                placeholderElement.dataset.tweetGloballyProcessed = 'true';
-                reject({ tweetId: tweetId, status: 'rejected', reason: 'Timeout', placeholderId: placeholderElement.id, originalUrl: originalUrl });
-            }, timeoutMs);
-
-            window.twttr.widgets.createTweet(tweetId, placeholderElement, options)
-                .then(tweetElement => {
-                    clearTimeout(timeoutHandle);
-                    if (tweetElement) {
-                        console.log(`[OTK TweetDebug] createTweetWithTimeout: SUCCESS - Tweet ID: ${tweetId}, Placeholder ID: ${placeholderElement.id}. Replacing placeholder content.`);
-                        placeholderElement.innerHTML = '';
-                        placeholderElement.appendChild(tweetElement);
-                        placeholderElement.dataset.tweetGloballyProcessed = 'true';
-                        resolve({ tweetId: tweetId, status: 'fulfilled', placeholderId: placeholderElement.id, originalUrl: originalUrl, element: tweetElement });
-                    } else {
-                        console.warn(`[OTK TweetDebug] createTweetWithTimeout: SUCCESS (but no element) - Tweet ID: ${tweetId}, Placeholder ID: ${placeholderElement.id}. Tweet might be deleted or unavailable.`);
-                        placeholderElement.textContent = `Tweet ${tweetId} unavailable (possibly deleted).`; // Updated text
-                        placeholderElement.style.color = '#aaa';
-                        placeholderElement.dataset.tweetGloballyProcessed = 'true';
-                        resolve({ tweetId: tweetId, status: 'fulfilled_empty', placeholderId: placeholderElement.id, originalUrl: originalUrl });
-                    }
-                })
-                .catch(error => {
-                    clearTimeout(timeoutHandle);
-                    placeholderElement.textContent = `Failed to load tweet ${tweetId} (API error).`; // Updated placeholder text
-                    placeholderElement.style.color = 'red';
-                    console.error(`[OTK TweetDebug] createTweetWithTimeout: Set placeholder ${placeholderElement.id} text to 'Failed (API error)' for Tweet ID ${tweetId}. Error:`, error); // Updated log
-                    placeholderElement.dataset.tweetGloballyProcessed = 'true';
-                    reject({ tweetId: tweetId, status: 'rejected', reason: 'API error', error: error, placeholderId: placeholderElement.id, originalUrl: originalUrl });
-                });
-        });
-    }
-
-    // MODIFIED FUNCTION (processTweetEmbeds)
-    async function processTweetEmbeds(containerElement) {
-        console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: Called. Container querySelectorAll for .twitter-embed-placeholder found:', containerElement.querySelectorAll('.twitter-embed-placeholder').length, 'placeholders.');
-        const placeholders = Array.from(containerElement.querySelectorAll('.twitter-embed-placeholder'));
-        // Assuming processedTweetIds is a global Set, declare if not:
-        // if (typeof processedTweetIds === 'undefined') { processedTweetIds = new Set(); }
-        // For now, this log will rely on it being declared elsewhere or will error if not.
-        // The primary mechanism for global skip is placeholder.dataset.tweetGloballyProcessed.
-
-        if (placeholders.length === 0) {
-            return;
-        }
-
-        const uniqueTweetIdsInThisBatch = new Set(); // Renamed from processedInThisRun
-        // console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: Initializing. Globally processed IDs so far (from a global Set, if used):', Array.from(processedTweetIds || []), 'Placeholders to process in this specific batch call:', placeholders.length);
-        // The above log might be problematic if processedTweetIds isn't truly global/initialized.
-        // Focusing on what's available:
-        const globallyProcessedPlaceholders = Array.from(containerElement.querySelectorAll('.twitter-embed-placeholder[data-tweet-globally-processed="true"]'));
-        console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: Initializing. Count of placeholders already marked data-tweet-globally-processed="true":', globallyProcessedPlaceholders.length, '. Placeholders to potentially process in this batch call:', placeholders.length);
-
-
-        try {
-            console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: Attempting to ensure Twitter widgets are loaded (this call is inside processTweetEmbeds)...');
-            await ensureTwitterWidgetsLoaded();
-            console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: Twitter widgets loading ensured (promise resolved). Proceeding with placeholder processing.');
-            const tweetPromises = [];
-
-            // console.log('[OTK Viewer Tweets] Starting loop to create tweet processing promises for ' + placeholders.length + ' placeholders...'); // Original log
-            placeholders.forEach(placeholder => { // Changed from for...of to forEach for easier logging access if needed before var declarations
-                const tweetId = placeholder.dataset.tweetId;
-                const originalUrl = placeholder.dataset.originalUrl; // Ensure this is present
-                // data-otk-tweet-queued is not used anymore, so logging it might be confusing or show undefined.
-                console.log(`[OTK Viewer Tweets DEBUG] processTweetEmbeds: Iterating placeholder. ID: ${placeholder.id}, Tweet ID: ${tweetId}, Original URL: ${originalUrl}, data-tweet-globally-processed: ${placeholder.dataset.tweetGloballyProcessed}`);
-
-                if (placeholder.dataset.tweetGloballyProcessed === 'true') {
-                    console.log(`[OTK Viewer Tweets DEBUG] processTweetEmbeds: SKIPPING (globally processed - data-tweet-globally-processed="true") - Placeholder ID: ${placeholder.id}, Tweet ID: ${tweetId}`);
-                    return; // continue in forEach is 'return'
-                }
-
-                if (!tweetId) {
-                    placeholder.textContent = 'Invalid tweet data (no ID).'; // Update placeholder
-                    placeholder.style.color = 'darkred';
-                    placeholder.dataset.tweetGloballyProcessed = 'true';
-                    console.warn('[OTK Viewer Tweets DEBUG] processTweetEmbeds: SKIPPING placeholder - No Tweet ID found. Placeholder ID:', placeholder.id, 'Original HTML snippet:', placeholder.innerHTML.substring(0,100));
-                    return;
-                }
-
-                if (uniqueTweetIdsInThisBatch.has(tweetId)) {
-                    console.log(`[OTK Viewer Tweets DEBUG] processTweetEmbeds: SKIPPING (already added to promises in this batch run via uniqueTweetIdsInThisBatch) - Placeholder ID: ${placeholder.id}, Tweet ID: ${tweetId}`);
-                    // Ensure even skipped-for-batch placeholders (if not globally processed) show "Loading..."
-                    if (!placeholder.innerHTML.includes('Loading Tweet...')) {
-                         placeholder.innerHTML = 'Loading Tweet...';
-                         placeholder.style.display = 'flex';
-                         placeholder.style.alignItems = 'center';
-                         placeholder.style.justifyContent = 'center';
-                    }
-                    return;
-                }
-
-                uniqueTweetIdsInThisBatch.add(tweetId);
-
-                console.log(`[OTK Viewer Tweets DEBUG] processTweetEmbeds: QUEUING for processing (adding to tweetPromises) - Placeholder ID: ${placeholder.id}, Tweet ID: ${tweetId}`);
-                placeholder.innerHTML = 'Loading Tweet...';
-                placeholder.style.display = 'flex';
-                placeholder.style.alignItems = 'center';
-                placeholder.style.justifyContent = 'center';
-
-                tweetPromises.push(
-                    createTweetWithTimeout(tweetId, placeholder, {
-                        theme: 'light',
-                        conversation: 'none',
-                        align: 'center',
-                        width: 500,
-                        dnt: true
-                    }, 40000) // Use 40s timeout
-                    // .then and .catch are now handled inside createTweetWithTimeout for structured resolve/reject
-                    // The placeholder.dataset.tweetGloballyProcessed is also set inside createTweetWithTimeout
-                );
-            });
-
-            console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: Finished creating all tweet processing promises. Total unique tweets queued in this batch: ' + uniqueTweetIdsInThisBatch.size + '. Now awaiting Promise.allSettled for ' + tweetPromises.length + ' promises.');
-            const results = await Promise.allSettled(tweetPromises);
-            console.log('[OTK Viewer Tweets DEBUG] processTweetEmbeds: All tweetPromises settled. Results count:', results.length);
-            results.forEach((result, index) => {
-                const outcome = result.status === 'fulfilled' ? result.value : result.reason;
-                // Check if outcome has the properties we expect (it should, due to changes in createTweetWithTimeout)
-                if (outcome && outcome.tweetId && outcome.placeholderId) {
-                     console.log(`[OTK Viewer Tweets DEBUG] processTweetEmbeds: Promise for Tweet ID ${outcome.tweetId} (Placeholder: ${outcome.placeholderId}, URL: ${outcome.originalUrl || 'N/A'}) settled. Status: ${result.status}. Full outcome:`, outcome);
-                } else {
-                     console.log(`[OTK Viewer Tweets DEBUG] processTweetEmbeds: Promise ${index} settled. Status: ${result.status}. Value/Reason (unexpected structure):`, outcome);
-                }
-            });
-            // console.log('[OTK Viewer LIFECYCLE] processTweetEmbeds: All createTweet promises have settled.'); // More detailed log above now
-
-        } catch (loadError) {
-            console.error("Failed to load Twitter widgets or process embeds:", loadError);
-            placeholders.forEach(placeholder => {
-                // Ensure it's a placeholder that might have been cleared or attempted
-                if (placeholder.classList.contains('twitter-embed-placeholder')) {
-                    const tweetId = placeholder.dataset.tweetId;
-                    const originalEscapedUrl = placeholder.dataset.originalUrl;
-                    let displayText = `View Tweet (ID: ${tweetId})`;
-
-                    if (originalEscapedUrl) {
-                        const urlMatch = originalEscapedUrl.match(/twitter\.com\/([a-zA-Z0-9_]+)\/status/);
-                        if (urlMatch && urlMatch[1]) {
-                            displayText = `View Tweet by @${urlMatch[1]} (ID: ${tweetId})`;
-                        }
-                        placeholder.innerHTML = `<a href="${originalEscapedUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2; text-decoration: none;">${displayText} 🐦 (Embed blocked by client/network)</a>`;
-                    } else {
-                        const fallbackUrl = `https://twitter.com/anyuser/status/${tweetId}`; // Should ideally not happen
-                        placeholder.innerHTML = `<a href="${fallbackUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2; text-decoration: none;">${displayText} 🐦 (Embed blocked, original URL missing)</a>`;
-                    }
-                    // Reset styling from 'Loading...' state
-                    placeholder.style.display = 'block';
-                    placeholder.style.alignItems = '';
-                    placeholder.style.justifyContent = '';
-                }
-            });
-        }
-    }
+    // REMOVED: ensureTwitterWidgetsLoaded, createTweetWithTimeout, processTweetEmbeds, createTwitterEmbedPlaceholder (old one)
+    // These were all related to the Twitter widgets.js approach.
 
     // Helper function to create YouTube embed HTML
     function getYouTubeIframeHTML(videoId, startTimeSeconds) {
@@ -762,53 +534,6 @@
         }
         const iframeHtml = `<iframe width="560" height="315" src="${finalSrc}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="aspect-ratio: 16 / 9; width: 100%; max-width: 560px;"></iframe>`;
         return `<div style="display: block; margin-top: 5px; margin-bottom: 5px;">${iframeHtml}</div>`;
-    }
-
-    function createTwitterEmbedPlaceholder(tweetId, originalUrl) {
-        const escapedOriginalUrl = originalUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;'); // Keep escaping for data attribute
-        const randomSuffix = Math.random().toString(36).substring(2, 9);
-
-        // Main container: tweet-content-container, also an embed-placeholder
-        const mainContainer = document.createElement('div');
-        mainContainer.className = 'tweet-content-container embed-placeholder';
-        mainContainer.id = `tweet-container-${tweetId}-${randomSuffix}`;
-        mainContainer.dataset.embedType = 'twitter';
-        mainContainer.dataset.tweetId = tweetId;
-        mainContainer.dataset.originalUrl = escapedOriginalUrl; // Use escaped here
-        // Apply styles
-        mainContainer.style.width = '100%';
-        mainContainer.style.textAlign = 'center';
-        mainContainer.style.minHeight = '600px'; // Increased initial min-height
-        mainContainer.style.display = 'block';
-        mainContainer.style.border = '1px solid #eee';
-        mainContainer.style.margin = '5px 0';
-        mainContainer.style.backgroundColor = '#f9f9f9';
-        mainContainer.style.padding = '0';
-
-        // Inner target for Twitter's widget
-        const widgetTarget = document.createElement('div');
-        widgetTarget.className = 'twitter-widget-target';
-        widgetTarget.id = `tweet-widget-target-${tweetId}-${randomSuffix}`;
-        widgetTarget.style.width = '100%';
-        // widgetTarget.style.height = '100%'; // Removed to allow natural height from tweet content
-
-        // Reserved space / loading message
-        const reservedSpace = document.createElement('div');
-        reservedSpace.className = 'tweet-reserved-space';
-        reservedSpace.style.height = '600px'; // Match the new min-height
-        reservedSpace.style.width = '100%';
-        reservedSpace.style.backgroundColor = '#f9f9f9';
-        reservedSpace.style.display = 'flex';
-        reservedSpace.style.alignItems = 'center';
-        reservedSpace.style.justifyContent = 'center';
-        reservedSpace.style.fontStyle = 'italic';
-        reservedSpace.style.color = '#888';
-        reservedSpace.textContent = 'Loading tweet...'; // Use textContent for plain text
-
-        widgetTarget.appendChild(reservedSpace);
-        mainContainer.appendChild(widgetTarget);
-
-        return mainContainer; // Return the DOM element
     }
 
     // Helper function to create Rumble link HTML (updated from embed)
@@ -1095,19 +820,15 @@ async function manageInitialScroll() {
         text = decodeEntities(text);
 
         // Define regexes (ensure global flag 'g' is used)
-        // YouTube regex now captures video ID (group 1) and all parameters (group 2)
         const youtubeRegexG = /https?:\/\/(?:www\.youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)((?:[?&][a-zA-Z0-9_=&%.:+-]*)*)/g;
         // Twitter regex:
-        // - Group 1: Full URL up to the ID (for data-original-url)
-        // - Group 1: Full URL up to the ID (for data-original-url e.g. https://x.com/user/status/123)
+        // - Group 1: Full URL (e.g. https://x.com/user/status/123)
         // - Group 2: Tweet ID (e.g. 123)
-        // - Includes optional query parameters in the main match (to replace them) but not in Group 1 or 2.
         // - Negative lookbehind (?<!(?:href="|src="|=)) to avoid matching URLs already likely part of HTML attributes.
         // - \b for word boundary.
         const twitterRegexG = /(?<!(?:href="|src="|=))\b(https?:\/\/(?:twitter\.com|x\.com)\/[a-zA-Z0-9_]+\/status\/([0-9]+))(?:\?[^\s<'"`]*)?/g;
         const rumbleRegexG = /https?:\/\/rumble\.com\/(?:embed\/)?(v[a-zA-Z0-9]+)(?:-[^\s"'>?&.]*)?(?:\.html)?(?:\?[^\s"'>]*)?/g;
         const twitchClipRegexG = /https?:\/\/(?:clips\.twitch\.tv\/|(?:www\.)?twitch\.tv\/[a-zA-Z0-9_]+\/clip\/)([a-zA-Z0-9_-]+)(?:\?[^\s"'>]*)?/g;
-        // Twitch VOD regex now captures VOD ID (group 1) and all parameters (group 2)
         const twitchVodRegexG = /https?:\/\/(?:www\.)?twitch\.tv\/videos\/([0-9]+)((?:[?&][a-zA-Z0-9_=&%.:+-]*)*)/g;
         const streamableRegexG = /https?:\/\/streamable\.com\/([a-zA-Z0-9]+)(?:\?[^\s"'>]*)?/g;
         const generalLinkRegexG = /(?<!(?:href="|src="))https?:\/\/[^\s<>"']+[^\s<>"'.?!,:;)]/g;
@@ -1115,35 +836,19 @@ async function manageInitialScroll() {
 
         // Order of operations:
 
-        // 0. Process __FULL_TWITTER_EMBED__ markers first (moved from step 10 to 0)
-        // This ensures that if a tweet is specifically marked for full embedding, it's handled before general link conversion.
-        text = text.replace(/__FULL_TWITTER_EMBED__\[([0-9]+)\]__LINK:(.*?)__/g, (match, tweetId, hiddenUrlFromPlaceholder) => {
-            const originalUrl = hiddenUrlFromPlaceholder.replace(/^https?:\/\//, "https://");
-            console.log(`[OTK ConvertQuotes] Processing __FULL_TWITTER_EMBED__ for Tweet ID: ${tweetId}, URL: ${originalUrl}`);
-            const placeholderElement = createTwitterEmbedPlaceholder(tweetId, originalUrl);
-            return placeholderElement.outerHTML;
+        // 1. X/Twitter - Convert to custom tweet placeholder HTML
+        // This regex will find all Twitter status URLs not already in an attribute.
+        text = text.replace(twitterRegexG, (match, originalUrl, tweetId) => {
+            console.log(`[OTK ConvertQuotes] Found Twitter URL: ${originalUrl}, Tweet ID: ${tweetId}. Creating custom placeholder.`);
+            if (embedCounts && embedCounts.hasOwnProperty('twitter')) embedCounts.twitter++; // Count custom tweets
+            return createCustomTweetPlaceholderHTML(tweetId, originalUrl);
         });
+        // The old __FULL_TWITTER_EMBED__ marker logic is no longer needed as all tweets go through the custom flow.
 
-        // 1. YouTube
+        // 2. YouTube
         text = text.replace(youtubeRegexG, (match, videoId, allParams) => {
             const startTime = getTimeFromParams(allParams);
             return `__YOUTUBE_EMBED__[${videoId}]__[${startTime || ''}]__`;
-        });
-
-        // 2. X/Twitter (general links to "Load Tweet")
-        // This will only apply if the URL wasn't already part of a __FULL_TWITTER_EMBED__ marker
-        text = text.replace(twitterRegexG, (match, originalUrl, tweetId) => {
-            // Check if this match is inside a __FULL_TWITTER_EMBED__ marker's content that somehow wasn't processed
-            // This is a safeguard, primary fix is ordering.
-            if (text.substring(0, match.index).includes("__FULL_TWITTER_EMBED__") && text.substring(match.index + match.length).includes("__")) {
-                 // Heuristic: if it looks like it's part of an unprocessed __FULL_TWITTER_EMBED__ marker, leave it.
-                 // This might happen if the __FULL_TWITTER_EMBED__ regex didn't match for some reason.
-                 console.warn(`[OTK ConvertQuotes] twitterRegexG matched a URL that might be part of an unprocessed __FULL_TWITTER_EMBED__ marker: ${originalUrl}. Leaving as is.`);
-                 return match; // Return the original match to avoid mangling it
-            }
-            console.log(`[OTK ConvertQuotes] Found general Twitter URL: ${originalUrl}, Extracted Tweet ID: ${tweetId}. Creating "Load Tweet" link.`);
-            const escapedOriginalUrl = originalUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-            return `<a href="#" class="load-tweet-link" data-tweet-id="${tweetId}" data-original-url="${escapedOriginalUrl}" style="text-decoration: none; color: #1da1f2; background-color: #e1f5fe; padding: 2px 5px; border-radius: 3px; border: 1px solid #b3e5fc;">Load Tweet (ID: ${tweetId})</a>`;
         });
 
         // 3. Rumble
@@ -1322,12 +1027,12 @@ async function manageInitialScroll() {
                 background-color: #E0E0E0 !important;
                 box-shadow: 0 0 5px rgba(0,0,0,0.3) !important;
             }
-.embed-placeholder {
+.embed-placeholder { /* General placeholder for YouTube, Twitch, etc. */
     position: relative;
     width: 100%;
-    max-width: 560px; /* Added back */
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
-    background-color: #2c2c2c; /* Darker background */
+    max-width: 560px; 
+    aspect-ratio: 16 / 9; 
+    background-color: #2c2c2c; 
     background-size: cover;
     background-position: center;
     border-radius: 4px;
@@ -1335,14 +1040,14 @@ async function manageInitialScroll() {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px 0; /* For left-alignment */
+    margin: 8px 0; 
     border: 1px solid #444;
-    color: white; /* For any text inside if needed */
-    overflow: hidden; /* Ensure play button doesn't overflow weirdly */
+    color: white; 
+    overflow: hidden; 
 }
 .embed-placeholder:focus, .embed-placeholder:hover {
     border-color: #888;
-    outline: 2px solid #0078D4; /* Focus indicator */
+    outline: 2px solid #0078D4; 
 }
 .play-button-overlay {
     font-size: 40px;
@@ -1355,40 +1060,296 @@ async function manageInitialScroll() {
     align-items: center;
     justify-content: center;
     text-shadow: 0 0 8px black;
-    pointer-events: none; /* Click goes to parent div */
+    pointer-events: none; 
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
-.embed-placeholder[data-loaded="true"] { /* When iframe is loaded inside */
+.embed-placeholder[data-loaded="true"] { 
     background-image: none !important;
-    border-color: transparent; /* Or specific styling for loaded state */
-    padding: 0; /* Remove padding if iframe takes full space */
+    border-color: transparent; 
+    padding: 0; 
 }
 .embed-placeholder[data-loaded="true"] .play-button-overlay {
     display: none;
 }
-.youtube-placeholder { /* Specific styling if needed, e.g. min-height if aspect-ratio fails */ }
-.twitch-placeholder { background-color: #3a265c; /* Darker Twitch purple */ }
-.streamable-placeholder { background-color: #1c3d52; /* Darker Streamable blue */ }
-.tweet-content-container.embed-placeholder[data-embed-type="twitter"] { /* Styles for the twitter content container when it's also an embed placeholder */
-    transition: background-color 0.3s ease; /* For visual feedback if color changes */
-    /* Override general embed-placeholder styles that are not suitable for tweets before loading */
-    aspect-ratio: auto; /* Tweets don't have a fixed aspect ratio like videos */
-    /* overflow: auto; */ /* Let it take initial height from min-height inline style */
+.youtube-placeholder { }
+.twitch-placeholder { background-color: #3a265c; }
+.streamable-placeholder { background-color: #1c3d52; }
+
+/* REMOVED Styles for the OLD Twitter embed container (twitter-tweet via widgets.js) */
+/* .tweet-content-container.embed-placeholder[data-embed-type="twitter"] { ... } */
+/* .tweet-content-container.embed-placeholder[data-embed-type="twitter"][data-loaded="true"] { ... } */
+
+/* NEW Custom Tweet Styles */
+.custom-tweet-placeholder {
+    display: block; 
+    width: 500px;    
+    max-height: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px auto; 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: #fff;
+    overflow: hidden; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    /* This will also need .embed-placeholder class if IntersectionObserver is to be used */
+    /* data-embed-type will be 'custom-twitter' */
 }
-.tweet-content-container.embed-placeholder[data-embed-type="twitter"][data-loaded="true"] {
-    /* Styles for when the tweet IS loaded */
-    aspect-ratio: auto; /* Ensure it remains auto */
-    overflow: visible;  /* Allow the tweet's iframe to expand and be fully visible */
-    /* background-color: transparent; is handled by JS */
-    /* border: none; is handled by .embed-placeholder[data-loaded="true"] */
-    /* padding: 0; is handled by .embed-placeholder[data-loaded="true"] */
+
+.custom-tweet-header {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 8px;
 }
-/* .tweet-content-container { */ /* General styles for tweet-content-container if any were needed beyond the specific case above */
-    /* Styles are mostly inline; add if needed */
-/* } */
+
+.custom-tweet-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #eee;
+}
+
+.custom-tweet-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.custom-tweet-displayname {
+    font-weight: bold;
+    color: #14171a;
+}
+
+.custom-tweet-username {
+    color: #657786;
+    font-size: 0.9em;
+}
+
+.custom-tweet-content {
+    max-height: 150px; 
+    overflow-y: auto;  
+    margin-bottom: 8px;
+    color: #14171a;
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+}
+
+.custom-tweet-content p { 
+    margin: 0 0 10px 0;
+}
+.custom-tweet-content p:last-child {
+    margin-bottom: 0;
+}
+
+.custom-tweet-media { /* Container for images/videos within the content area */
+    margin-top: 8px;
+}
+
+.custom-tweet-media img,
+.custom-tweet-media video {
+    display: block; 
+    max-width: 100%; 
+    max-height: 120px; /* Max height for a single media item */
+    border-radius: 8px;
+    margin-top: 5px;
+    object-fit: contain; 
+}
+/* If multiple images, they'd be stacked or need different styling */
+
+.custom-tweet-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+    color: #657786;
+    border-top: 1px solid #e1e8ed;
+    padding-top: 8px;
+    margin-top: auto; 
+}
+
+.custom-tweet-footer a {
+    color: #1b95e0;
+    text-decoration: none;
+}
+.custom-tweet-footer a:hover {
+    text-decoration: underline;
+}
+
+.custom-tweet-loading,
+.custom-tweet-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    min-height: 50px; /* Ensure loading/error message has some space */
+    font-style: italic;
+    color: #657786;
+}
         `;
         document.head.appendChild(styleSheet);
     }
+
+function createCustomTweetPlaceholderHTML(tweetId, originalUrl) {
+    const escapedOriginalUrl = originalUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    // The main container gets the class for fixed sizing and general appearance.
+    // It also gets 'embed-placeholder' for the IntersectionObserver and 'custom-twitter' for type.
+    return `
+        <div class="custom-tweet-placeholder embed-placeholder" 
+             data-embed-type="custom-twitter" 
+             data-tweet-id="${tweetId}" 
+             data-original-url="${escapedOriginalUrl}" 
+             data-loaded="false">
+            <div class="custom-tweet-header">
+                <img class="custom-tweet-avatar" src="" alt="Avatar" style="display:none; background-color: #eee;">
+                <div class="custom-tweet-author">
+                    <span class="custom-tweet-displayname"></span>
+                    <span class="custom-tweet-username"></span>
+                </div>
+            </div>
+            <div class="custom-tweet-content">
+                <!-- Content (text, images, videos) will be populated here -->
+                <div class="custom-tweet-loading">Loading tweet...</div>
+                <div class="custom-tweet-media">
+                    <!-- Media items will be appended here -->
+                </div>
+            </div>
+            <div class="custom-tweet-footer">
+                <a href="${escapedOriginalUrl}" target="_blank" rel="noopener noreferrer">View on X/Twitter</a>
+                <span class="custom-tweet-date"></span>
+            </div>
+        </div>
+    `;
+}
+
+async function fetchAndRenderCustomTweet(tweetId, originalUrl, targetElement) {
+    console.log(`[CustomTweet] Fetching data for ${tweetId}`);
+    const loadingDiv = targetElement.querySelector('.custom-tweet-loading');
+    const contentDiv = targetElement.querySelector('.custom-tweet-content'); // Main content area, not just media
+    const mediaDiv = targetElement.querySelector('.custom-tweet-media');
+    const avatarImg = targetElement.querySelector('.custom-tweet-avatar');
+    const displayNameSpan = targetElement.querySelector('.custom-tweet-displayname');
+    const usernameSpan = targetElement.querySelector('.custom-tweet-username');
+    const dateSpan = targetElement.querySelector('.custom-tweet-date');
+
+    // Clear previous media and hide loading message
+    if (mediaDiv) mediaDiv.innerHTML = '';
+    // If loadingDiv (initial "Loading tweet...") exists within contentDiv, ensure it's hidden.
+    const initialLoadingDiv = contentDiv.querySelector('.custom-tweet-loading');
+    if (initialLoadingDiv) initialLoadingDiv.style.display = 'none';
+
+    // Default to showing an error, successful load will override
+    const showError = (message) => {
+        // Clear any previously rendered text content and media
+        const textContentDisplay = contentDiv.querySelector('.custom-tweet-text-content');
+        if (textContentDisplay) textContentDisplay.innerHTML = ''; // Clear actual text
+        if (mediaDiv) mediaDiv.innerHTML = ''; // Clear media
+
+        let errorDisplay = contentDiv.querySelector('.custom-tweet-error');
+        if (!errorDisplay) {
+            errorDisplay = document.createElement('div');
+            errorDisplay.className = 'custom-tweet-error';
+            // Add the error display as the first child of contentDiv
+            contentDiv.insertBefore(errorDisplay, contentDiv.firstChild);
+        }
+        errorDisplay.textContent = message;
+        errorDisplay.style.display = 'flex'; // Make sure it's visible
+
+        targetElement.dataset.loaded = 'true'; // Mark as "loaded" to prevent re-fetch, even on error
+    };
+
+    try {
+        // Extract user and status ID from originalUrl for vxtwitter
+        const urlParts = originalUrl.match(/twitter\.com\/(.+)\/status\/(\d+)/);
+        if (!urlParts || urlParts.length < 3) {
+            throw new Error("Invalid tweet URL for API construction.");
+        }
+        const apiUrlUser = urlParts[1];
+        const apiUrlTweetId = urlParts[2];
+        const apiUrl = `https://api.vxtwitter.com/${apiUrlUser}/status/${apiUrlTweetId}`;
+
+        console.log(`[CustomTweet] API URL: ${apiUrl}`);
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log(`[CustomTweet] Data for ${tweetId}:`, data);
+
+        if (!data || !data.user_name || !data.text) { // Basic check for essential data
+            throw new Error("Tweet data incomplete or not found from API.");
+        }
+
+        // Populate header
+        if (avatarImg && data.user_profile_image_url_https) {
+            avatarImg.src = data.user_profile_image_url_https;
+            avatarImg.alt = `${data.user_name}'s avatar`;
+            avatarImg.style.display = 'block';
+        }
+        if (displayNameSpan) displayNameSpan.textContent = data.user_name;
+        if (usernameSpan) usernameSpan.textContent = `@${data.screen_name || data.user_screen_name}`; // VXTwitter uses user_screen_name in tweet object, but sometimes screen_name in user object.
+
+        // Populate content text
+        // Ensure loading/error div is removed or hidden before adding text
+        if (loadingDiv) loadingDiv.style.display = 'none';
+        let errorDisplay = contentDiv.querySelector('.custom-tweet-error');
+        if (errorDisplay) errorDisplay.style.display = 'none';
+
+        let textContentDiv = contentDiv.querySelector('.custom-tweet-text-content');
+        if (!textContentDiv) {
+            textContentDiv = document.createElement('div');
+            textContentDiv.className = 'custom-tweet-text-content';
+            // Prepend text content div after any loading/error divs are handled
+            if (mediaDiv) { // if mediaDiv exists, insert before it
+                contentDiv.insertBefore(textContentDiv, mediaDiv);
+            } else { // if no mediaDiv, just append to contentDiv
+                contentDiv.appendChild(textContentDiv);
+            }
+        }
+        textContentDiv.textContent = data.text;
+
+
+        // Populate media
+        if (mediaDiv) { // Ensure mediaDiv exists
+            mediaDiv.innerHTML = ''; // Clear any previous media/loading text
+            if (data.media_extended && Array.isArray(data.media_extended)) {
+                data.media_extended.forEach(mediaItem => {
+                    if (mediaItem.type === 'image' && mediaItem.url) {
+                        const img = document.createElement('img');
+                        img.src = mediaItem.url;
+                        img.alt = 'Tweet image';
+                        mediaDiv.appendChild(img);
+                    } else if (mediaItem.type === 'video' && mediaItem.url) {
+                        const video = document.createElement('video');
+                        video.src = mediaItem.url;
+                        video.controls = true;
+                        // video.autoplay = false; // Default, but good to be explicit
+                        // video.muted = true; // Good practice for autoplay, but we have controls
+                        mediaDiv.appendChild(video);
+                    }
+                });
+            }
+        }
+
+
+        // Populate footer
+        if (dateSpan && data.date_epoch) {
+            const date = new Date(data.date_epoch * 1000);
+            dateSpan.textContent = date.toLocaleString(undefined, { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+        }
+
+        targetElement.dataset.loaded = 'true';
+
+    } catch (error) {
+        console.error(`[CustomTweet] Error fetching/rendering tweet ${tweetId}:`, error);
+        showError(`Failed to load tweet: ${error.message}`);
+    }
+}
+
 
     // Helper: Find message by post id across all threads
     function findMessage(postId) {
@@ -1905,29 +1866,12 @@ async function manageInitialScroll() {
             allMessages.forEach(msg => {
                 console.log('[OTK Viewer LIFECYCLE] renderAllMessages: Loop: START processing message ID ' + msg.id);
 
-                // For initial full load, identify tweets and prepare them for full embedding
-            const originalMsgText = msg.text;
-            let isTweetMessage = false;
-            const twitterLinkMatches = [...msg.text.matchAll(/https?:\/\/(?:twitter\.com|x\.com)\/[a-zA-Z0-9_]+\/status\/([0-9]+)/g)];
+                // The old logic for __FULL_TWITTER_EMBED__ markers is removed.
+                // convertQuotes will now directly handle twitter URLs and create custom tweet placeholders.
+                const msgEl = renderMessageWithQuotes(msg, msg.threadId, 0, [], embedCounts, renderedFullSizeImages, 'initial_render_frame');
 
-            if (twitterLinkMatches.length > 0) {
-                isTweetMessage = true;
-                console.log(`[OTK Viewer renderAllMessages] Message ${msg.id} contains tweets. Converting to __FULL_TWITTER_EMBED__ markers.`);
-                msg.text = msg.text.replace(/https?:\/\/(?:twitter\.com|x\.com)\/[a-zA-Z0-9_]+\/status\/([0-9]+)(?:\?[^\s<>"']*)?/g, (match, tweetId) => {
-                    const originalUrl = match;
-                    const escapedOriginalUrl = originalUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-                    return `__FULL_TWITTER_EMBED__[${tweetId}]__LINK:${escapedOriginalUrl}__`;
-                });
-            }
-
-            const msgEl = renderMessageWithQuotes(msg, msg.threadId, 0, [], embedCounts, renderedFullSizeImages, 'initial_render_frame'); // Added parentFrameId
-
-            if (isTweetMessage) {
-                msg.text = originalMsgText; // Restore original text after processing
-            }
-
-            // Selection class is now primarily handled by restoreSelectedMessageState upon loading all messages
-            viewer.appendChild(msgEl);
+                // Selection class is now primarily handled by restoreSelectedMessageState upon loading all messages
+                viewer.appendChild(msgEl);
             console.log(`[OTK Video Debug - renderAllMessages] Appended message element for ID ${msg.id}. Videos within should now attempt to load via their own .load() calls if correctly set up in createFullMedia.`); // Added
             // Inside the allMessages.forEach loop, after msgEl is created
             if (msg.attachment && msg.attachment.ext) {
@@ -2117,19 +2061,9 @@ async function appendNewMessagesToFrame() {
         console.log(`[OTK Viewer] Rendering ${tweetMessagesToRenderFully.length} new messages containing tweets fully.`);
 
         for (const msg of tweetMessagesToRenderFully) {
-            // Temporarily modify convertQuotes behavior for these tweets, or handle it in renderMessageWithQuotes
-            // For now, we'll rely on a modified renderMessageWithQuotes or a direct call to embed tweets
-            const originalMsgText = msg.text;
-            // Replace twitter links with a special marker that renderMessageWithQuotes will use to embed directly
-            msg.text = msg.text.replace(/https?:\/\/(?:twitter\.com|x\.com)\/[a-zA-Z0-9_]+\/status\/([0-9]+)(?:\?[^\s<>"']*)?/g, (match, tweetId) => {
-                const originalUrl = match; // Full match is the original URL
-                const escapedOriginalUrl = originalUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-                // This marker will be caught by a modified logic in renderMessageWithQuotes or handled after
-                return `__FULL_TWITTER_EMBED__[${tweetId}]__LINK:${escapedOriginalUrl}__`;
-            });
-
+            // The old logic for __FULL_TWITTER_EMBED__ markers is removed.
+            // convertQuotes will now directly handle twitter URLs.
             const msgEl = renderMessageWithQuotes(msg, msg.threadId, 0, [], embedCountsThisBatch, renderedFullSizeImagesThisBatch, newFrame.id);
-            msg.text = originalMsgText; // Restore original text
 
             const placeholdersInMsg = msgEl.querySelectorAll('.embed-placeholder');
             placeholdersInMsg.forEach(ph => newPlaceholdersToObserve.push(ph));
@@ -2318,83 +2252,8 @@ async function appendNewMessagesToFrame() {
         }, 500); // Delay of 500 milliseconds
     }
 
-    // Event listener for "Load Tweet" links
-    document.addEventListener('click', async function(event) {
-        if (event.target.classList.contains('load-tweet-link')) {
-            event.preventDefault();
-            const linkElement = event.target;
-            const tweetId = linkElement.dataset.tweetId;
-            const originalUrl = linkElement.dataset.originalUrl;
-
-            if (!tweetId || !originalUrl) {
-                console.error('[OTK Viewer] "Load Tweet" link is missing tweetId or originalUrl.', linkElement);
-                linkElement.textContent = 'Error: Missing tweet data.';
-                linkElement.style.color = 'red';
-                return;
-            }
-
-            // Create the placeholder DOM element
-            const placeholderElement = createTwitterEmbedPlaceholder(tweetId, originalUrl);
-
-            // Replace the link with the placeholder
-            linkElement.parentNode.replaceChild(placeholderElement, linkElement);
-            console.log(`[OTK Viewer] Replaced "Load Tweet" link with placeholder for tweet ${tweetId}.`);
-
-            // Observe the new placeholder (it's a 'tweet-content-container' which is also an 'embed-placeholder')
-            if (embedObserver && placeholderElement) {
-                 embedObserver.observe(placeholderElement);
-                 console.log(`[OTK Viewer IO] Manually triggered "Load Tweet": Observing new placeholder for ${tweetId}.`);
-            }
-
-
-            // Now, load the tweet into the placeholder
-            // This part is similar to what the IntersectionObserver would do
-            try {
-                await ensureTwitterWidgetsLoaded();
-                console.log(`[OTK Viewer] Loading Tweet ${tweetId} after "Load Tweet" click.`);
-                // The placeholderElement itself is the 'tweet-content-container'.
-                // createTweetWithTimeout expects the *widget target* div inside it.
-                const widgetTarget = placeholderElement.querySelector('.twitter-widget-target');
-                if (!widgetTarget) {
-                    console.error('[OTK Viewer] Could not find .twitter-widget-target in dynamically created placeholder for tweet', tweetId);
-                    placeholderElement.innerHTML = `<div class="tweet-reserved-space" style="height: 100px; width: 100%; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #cc0000; font-size: 12px;">Error: Placeholder structure invalid. <a href="${originalUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2;">View on Twitter</a></div>`;
-                    return;
-                }
-
-                const tweetResult = await createTweetWithTimeout(tweetId, widgetTarget, {
-                    theme: 'light',
-                    conversation: 'none',
-                    align: 'center',
-                    width: 500,
-                    dnt: true
-                });
-
-                if (tweetResult && tweetResult.element) { // Successfully loaded and rendered
-                    placeholderElement.dataset.loaded = 'true'; // Mark the main container as loaded
-                    placeholderElement.style.height = 'auto';
-                    placeholderElement.style.minHeight = '0';
-                    placeholderElement.style.backgroundColor = 'transparent';
-                    console.log(`[OTK Viewer] Tweet ${tweetId} loaded successfully via click.`);
-                } else { // Tweet loaded but was empty/unavailable
-                    placeholderElement.dataset.loaded = 'true';
-                    placeholderElement.style.height = 'auto';
-                    placeholderElement.style.minHeight = '100px';
-                    placeholderElement.style.backgroundColor = '#f0f0f0';
-                    console.log(`[OTK Viewer] Tweet ${tweetId} loaded via click but was unavailable/empty.`);
-                }
-            } catch (error) {
-                console.error(`[OTK Viewer] Error loading tweet ${tweetId} after click:`, error);
-                const widgetTarget = placeholderElement.querySelector('.twitter-widget-target');
-                if (widgetTarget) {
-                    widgetTarget.innerHTML = `<div class="tweet-reserved-space" style="height: 100px; width: 100%; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #cc0000; font-size: 12px;">Failed to load tweet. <a href="${originalUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2;">View on Twitter</a></div>`;
-                }
-                placeholderElement.dataset.loaded = 'false'; // Or 'error'
-                placeholderElement.style.height = 'auto';
-                placeholderElement.style.minHeight = '100px';
-                placeholderElement.style.backgroundColor = '#f0f0f0';
-            }
-        }
-    });
+    // REMOVED: Event listener for "Load Tweet" links as custom tweets load via IntersectionObserver.
+    // The old 'load-tweet-link' class and associated logic are no longer used.
 
     window.addEventListener('beforeunload', () => {
         if (viewer && viewer.style.display === 'block') { // Check if viewer exists and is visible
@@ -2583,4 +2442,3 @@ document.querySelectorAll(".tweet-content-container").forEach(container => {
     }
   }
 });
-// === End Fix ===
